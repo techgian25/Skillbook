@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13: Local Storage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 13: Local Storage
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is Local Storage?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Local Storage is a web storage API that allows you to store key-value pairs in the browser. Data persists even after the browser is closed and reopened.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Local Storage vs Session Storage:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Local Storage</strong>: Persists until explicitly cleared</li>
+                <li><strong>Session Storage</strong>: Cleared when tab/window is closed</li>
+                <li>Both store strings only (need to serialize objects)</li>
+                <li>Both are synchronous (block the main thread)</li>
+                <li>Storage limit: ~5-10MB per origin</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Basic Operations
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The localStorage API provides simple methods to store, retrieve, and remove data.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Storing Data:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Store simple values
+localStorage.setItem('username', 'john_doe');
+localStorage.setItem('theme', 'dark');
+localStorage.setItem('fontSize', '16');
+
+// Direct property access (alternative)
+localStorage.username = 'john_doe';
+localStorage['theme'] = 'dark';</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Retrieving Data:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Get stored values
+const username = localStorage.getItem('username');
+const theme = localStorage.getItem('theme');
+
+// Direct property access
+const fontSize = localStorage.fontSize;
+const language = localStorage['language'];
+
+// Handle non-existent keys
+const userId = localStorage.getItem('userId') || 'anonymous';
+const settings = localStorage.getItem('settings') || '{}';
+
+// Check if key exists
+if (localStorage.getItem('token')) {
+    // User is logged in
+}</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Removing Data:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Remove specific item
+localStorage.removeItem('tempData');
+
+// Clear all data
+localStorage.clear();
+
+// Remove multiple items
+const keysToRemove = ['cache1', 'cache2', 'temp'];
+keysToRemove.forEach(key => localStorage.removeItem(key));</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Storing Complex Data
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Local Storage only stores strings, so you need to serialize complex data types like objects and arrays.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">JSON Serialization:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Store objects
+const user = {
+    id: 123,
+    name: 'John Doe',
+    email: 'john@example.com',
+    preferences: {
+        theme: 'dark',
+        notifications: true
+    }
+};
+
+localStorage.setItem('user', JSON.stringify(user));
+
+// Store arrays
+const todos = [
+    { id: 1, text: 'Learn JavaScript', completed: true },
+    { id: 2, text: 'Build a project', completed: false },
+    { id: 3, text: 'Deploy to production', completed: false }
+];
+
+localStorage.setItem('todos', JSON.stringify(todos));
+
+// Retrieve and parse
+const storedUser = JSON.parse(localStorage.getItem('user'));
+const storedTodos = JSON.parse(localStorage.getItem('todos'));
+
+// Handle parsing errors
+function getStoredData(key, defaultValue = null) {
+    try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : defaultValue;
+    } catch (error) {
+        console.log(`Error parsing ${key} from localStorage:`, error);
+        return defaultValue;
+    }
+}
+
+const userData = getStoredData('user', {});
+const todoList = getStoredData('todos', []);</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Storage Events
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The storage event fires when data is modified in localStorage (but not in the same window/tab that made the change).
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Listen for storage changes from other tabs/windows
+window.addEventListener('storage', function(event) {
+    console.log('Storage changed:', {
+        key: event.key,
+        oldValue: event.oldValue,
+        newValue: event.newValue,
+        url: event.url,
+        storageArea: event.storageArea
+    });
+    
+    // React to specific changes
+    if (event.key === 'theme') {
+        applyTheme(event.newValue);
+    }
+    
+    if (event.key === 'user') {
+        updateUserInterface(event.newValue);
+    }
+});
+
+// Example: Theme synchronization across tabs
+function applyTheme(theme) {
+    document.body.className = theme;
+}
+
+// Initial theme application
+const currentTheme = localStorage.getItem('theme') || 'light';
+applyTheme(currentTheme);</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Practical Examples
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Common use cases for localStorage in web applications.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">User Preferences:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class UserPreferences {
+    static get(key, defaultValue) {
+        try {
+            const item = localStorage.getItem(key);
+            return item ? JSON.parse(item) : defaultValue;
+        } catch {
+            return defaultValue;
+        }
+    }
+    
+    static set(key, value) {
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (error) {
+            console.log('Failed to save preference:', error);
+        }
+    }
+    
+    static getTheme() {
+        return this.get('theme', 'light');
+    }
+    
+    static setTheme(theme) {
+        this.set('theme', theme);
+        this.applyTheme(theme);
+    }
+    
+    static applyTheme(theme) {
+        document.body.className = theme;
+    }
+}
+
+// Usage
+document.addEventListener('DOMContentLoaded', () => {
+    const theme = UserPreferences.getTheme();
+    UserPreferences.applyTheme(theme);
+});</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Form Data Persistence:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class FormPersistence {
+    constructor(formId) {
+        this.formId = formId;
+        this.form = document.getElementById(formId);
+        this.loadFormData();
+        this.setupAutoSave();
+    }
+    
+    loadFormData() {
+        const savedData = localStorage.getItem(`form_${this.formId}`);
+        if (savedData) {
+            const data = JSON.parse(savedData);
+            Object.keys(data).forEach(key => {
+                const input = this.form.elements[key];
+                if (input) {
+                    input.value = data[key];
+                }
+            });
+        }
+    }
+    
+    saveFormData() {
+        const data = {};
+        Array.from(this.form.elements).forEach(element => {
+            if (element.name && element.value) {
+                data[element.name] = element.value;
+            }
+        });
+        localStorage.setItem(`form_${this.formId}`, JSON.stringify(data));
+    }
+    
+    setupAutoSave() {
+        this.form.addEventListener('input', () => {
+            this.saveFormData();
+        });
+    }
+    
+    clearSavedData() {
+        localStorage.removeItem(`form_${this.formId}`);
+    }
+}
+
+// Usage
+const contactForm = new FormPersistence('contact-form');</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Shopping Cart Example
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                A complete example of using localStorage for a shopping cart.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class ShoppingCart {
+    constructor() {
+        this.items = this.loadCart();
+    }
+    
+    loadCart() {
+        try {
+            const cart = localStorage.getItem('shoppingCart');
+            return cart ? JSON.parse(cart) : [];
+        } catch (error) {
+            console.log('Error loading cart:', error);
+            return [];
+        }
+    }
+    
+    saveCart() {
+        try {
+            localStorage.setItem('shoppingCart', JSON.stringify(this.items));
+        } catch (error) {
+            console.log('Error saving cart:', error);
+        }
+    }
+    
+    addItem(product) {
+        const existingItem = this.items.find(item => item.id === product.id);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            this.items.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: 1
+            });
+        }
+        
+        this.saveCart();
+        this.updateUI();
+    }
+    
+    removeItem(productId) {
+        this.items = this.items.filter(item => item.id !== productId);
+        this.saveCart();
+        this.updateUI();
+    }
+    
+    getTotal() {
+        return this.items.reduce((total, item) => {
+            return total + (item.price * item.quantity);
+        }, 0);
+    }
+    
+    getItemCount() {
+        return this.items.reduce((count, item) => count + item.quantity, 0);
+    }
+    
+    clearCart() {
+        this.items = [];
+        localStorage.removeItem('shoppingCart');
+        this.updateUI();
+    }
+    
+    updateUI() {
+        // Update cart count in header
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) {
+            cartCount.textContent = this.getItemCount();
+        }
+        
+        // Update cart total
+        const cartTotal = document.getElementById('cart-total');
+        if (cartTotal) {
+            cartTotal.textContent = `$${this.getTotal().toFixed(2)}`;
+        }
+    }
+}
+
+// Usage
+const cart = new ShoppingCart();
+
+// Add event listeners to "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const product = {
+            id: e.target.dataset.productId,
+            name: e.target.dataset.productName,
+            price: parseFloat(e.target.dataset.productPrice)
+        };
+        cart.addItem(product);
+    });
+});</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Error Handling and Best Practices
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Handling storage limitations and implementing robust localStorage usage.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Storage Quota Handling:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function safeSetItem(key, value) {
+    try {
+        localStorage.setItem(key, value);
+        return true;
+    } catch (error) {
+        if (error.name === 'QuotaExceededError') {
+            console.log('Storage quota exceeded');
+            // Try to free up space by removing old data
+            clearOldCache();
+            try {
+                localStorage.setItem(key, value);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+        console.log('Storage error:', error);
+        return false;
+    }
+}
+
+function clearOldCache() {
+    // Remove items older than 7 days
+    const now = Date.now();
+    const keysToRemove = [];
+    
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('cache_')) {
+            try {
+                const data = JSON.parse(localStorage.getItem(key));
+                if (data.timestamp && (now - data.timestamp) > 7 * 24 * 60 * 60 * 1000) {
+                    keysToRemove.push(key);
+                }
+            } catch {
+                // Invalid data, remove it
+                keysToRemove.push(key);
+            }
+        }
+    }
+    
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+}</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Best Practices:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Always handle JSON.parse() errors</li>
+                <li>Check for storage availability before use</li>
+                <li>Use meaningful key names with prefixes</li>
+                <li>Implement data versioning for stored objects</li>
+                <li>Don't store sensitive information</li>
+                <li>Provide fallbacks when localStorage is unavailable</li>
+                <li>Consider using IndexedDB for large/complex data</li>
+                <li>Test with storage disabled in browser dev tools</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Session Storage
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Session Storage works similarly to localStorage but data is cleared when the tab/window is closed.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Session Storage API (same as localStorage)
+sessionStorage.setItem('tempData', 'value');
+const tempData = sessionStorage.getItem('tempData');
+sessionStorage.removeItem('tempData');
+sessionStorage.clear();
+
+// Use cases for sessionStorage:
+// - Temporary form data
+// - Session-specific settings
+// - Shopping cart for guest users
+// - Wizard/stepper state
+// - Authentication tokens (if you want them cleared on tab close)
+
+class SessionManager {
+    static set(key, value) {
+        try {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        } catch (error) {
+            console.log('Session storage error:', error);
+        }
+    }
+    
+    static get(key, defaultValue = null) {
+        try {
+            const item = sessionStorage.getItem(key);
+            return item ? JSON.parse(item) : defaultValue;
+        } catch {
+            return defaultValue;
+        }
+    }
+    
+    static remove(key) {
+        sessionStorage.removeItem(key);
+    }
+    
+    static clear() {
+        sessionStorage.clear();
+    }
+}</code></pre>
+        </details>
+    </div>
+</body>
+</html>

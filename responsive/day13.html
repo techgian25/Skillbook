@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 - Bootstrap Utilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 13: Utilities and helpers (Bootstrap)</h1>
+        
+        <!-- Section 1 -->
+        <div class="mb-6 border-l-4 border-blue-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Spacing Utilities</h2>
+                <span class="text-2xl text-blue-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Bootstrap provides utility classes for margin and padding:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>m-*</code> - Margin on all sides</li>
+                    <li><code>mt-3</code>, <code>mb-2</code> - Margin top/bottom</li>
+                    <li><code>p-4</code> - Padding on all sides</li>
+                    <li><code>ms-auto</code> - Margin-start (auto = right side)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="mb-6 border-l-4 border-green-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Display & Visibility</h2>
+                <span class="text-2xl text-green-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>d-block</code>, <code>d-inline</code>, <code>d-flex</code> - Display types</li>
+                    <li><code>d-none</code> - Hide element</li>
+                    <li><code>d-sm-block</code> - Responsive display</li>
+                    <li><code>visibility-hidden</code> - Hide but keep space</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="mb-6 border-l-4 border-purple-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Text Utilities</h2>
+                <span class="text-2xl text-purple-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>text-center</code>, <code>text-start</code> - Text alignment</li>
+                    <li><code>text-uppercase</code>, <code>text-lowercase</code> - Text transform</li>
+                    <li><code>fw-bold</code>, <code>fs-5</code> - Font weight and size</li>
+                    <li><code>text-muted</code> - Muted text color</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="mb-6 border-l-4 border-orange-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-orange-50 hover:bg-orange-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Utility Example</h2>
+                <span class="text-2xl text-orange-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Using common utilities together:</p>
+                <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
+                    <code class="text-sm">&lt;div class="d-flex justify-content-between align-items-center p-3 mb-4"&gt;<br>&nbsp;&nbsp;&lt;h3 class="text-center fw-bold"&gt;Title&lt;/h3&gt;<br>&nbsp;&nbsp;&lt;span class="text-muted"&gt;12 items&lt;/span&gt;<br>&lt;/div&gt;</code>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="mb-6 border-l-4 border-red-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">More Utilities</h2>
+                <span class="text-2xl text-red-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Opacity utilities for transparency</li>
+                    <li>Float utilities for positioning</li>
+                    <li>Overflow utilities for content overflow</li>
+                    <li>Sizing utilities for width and height</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('span');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                chevron.textContent = '▶';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

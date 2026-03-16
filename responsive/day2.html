@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 2: Getting started with Tailwind CSS</h1>
+        
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">What is Tailwind CSS?</summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs without leaving your HTML. Unlike traditional frameworks, Tailwind doesn't provide pre-built components but gives you the building blocks to create your own unique designs.
+            </p>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Key Features</summary>
+            <p class="mt-3 mb-5 text-gray-700">Tailwind provides a comprehensive utility-first approach:</p>
+            <h3 class="text-sm font-semibold mb-2">Main Features:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Utility-first approach</li>
+                <li>Highly customizable via config file</li>
+                <li>Responsive design utilities</li>
+                <li>Dark mode support built-in</li>
+                <li>Purge unused CSS for smaller bundles</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">How to Get Started</summary>
+            <p class="mt-3 mb-5 text-gray-700">You can include Tailwind in your project in several ways:</p>
+            <h3 class="text-sm font-semibold mb-2">Installation Methods:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>CDN:</strong> Add the Tailwind CSS script to your HTML head (like we're using here)</li>
+                <li><strong>Build process:</strong> Install via npm and use PostCSS or a build tool like Vite/Webpack</li>
+                <li><strong>CLI:</strong> Use the Tailwind CLI for standalone projects</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Basic Example</summary>
+            <p class="mt-3 mb-5 text-gray-700">Here's a simple example of Tailwind utility classes:</p>
+            <h3 class="text-sm font-semibold mb-2">Tailwind Code:</h3>
+            <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
+                <code class="text-sm">&lt;div class="bg-blue-500 text-white p-4 rounded-lg shadow"&gt;<br>&nbsp;&nbsp;Hello World<br>&lt;/div&gt;</code>
+            </div>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Learning Outcomes</summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand Tailwind's utility-first approach</li>
+                <li>Learn how to use Tailwind classes</li>
+                <li>Build custom components with utilities</li>
+                <li>Apply responsive design concepts</li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>

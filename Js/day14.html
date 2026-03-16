@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14: Regular Expressions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 14: Regular Expressions
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Regular Expressions?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Regular expressions (regex) are patterns used to match character combinations in strings. They are powerful tools for searching, validating, and manipulating text.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Use Cases:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Input validation (emails, phone numbers, etc.)</li>
+                <li>Search and replace operations</li>
+                <li>Parsing and extracting data from text</li>
+                <li>Text formatting and cleanup</li>
+                <li>URL routing and parameter extraction</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Creating Regular Expressions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                There are two ways to create regex patterns in JavaScript.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Literal Notation:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Using forward slashes
+const pattern = /hello/;
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Constructor Function:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Using RegExp constructor
+const pattern = new RegExp('hello');
+const dynamicPattern = new RegExp(userInput, 'gi');
+
+// Useful when pattern comes from user input or variables
+const searchTerm = 'JavaScript';
+const regex = new RegExp(searchTerm, 'i'); // case-insensitive search</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Flags:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><code>g</code> - Global (find all matches, not just first)</li>
+                <li><code>i</code> - Case insensitive</li>
+                <li><code>m</code> - Multiline (^ and $ match line starts/ends)</li>
+                <li><code>s</code> - Dot matches newlines</li>
+                <li><code>u</code> - Unicode support</li>
+                <li><code>y</code> - Sticky (matches from lastIndex position)</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Basic Patterns
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Fundamental regex patterns and metacharacters.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Literal Characters:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>/hello/     // matches "hello"
+/JavaScript/ // matches "JavaScript"
+/abc/        // matches "abc"</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Character Classes:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>/[abc]/     // matches 'a', 'b', or 'c'
+/[0-9]/      // matches any digit
+/[a-z]/      // matches lowercase letters
+/[A-Z]/      // matches uppercase letters
+/[a-zA-Z]/   // matches any letter
+/[0-9a-zA-Z]/ // matches alphanumeric
+
+// Negated character classes
+/[^0-9]/     // matches anything except digits
+/[^a-z]/     // matches anything except lowercase letters</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Predefined Character Classes:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>/\d/  // equivalent to [0-9] (digits)
+/\D/  // equivalent to [^0-9] (non-digits)
+/\w/  // equivalent to [a-zA-Z0-9_] (word characters)
+/\W/  // equivalent to [^a-zA-Z0-9_] (non-word characters)
+/\s/  // whitespace characters (space, tab, newline)
+/\S/  // non-whitespace characters</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Quantifiers
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Quantifiers specify how many times a character or group should be matched.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Exact count
+/\d{3}/     // exactly 3 digits
+/\w{5}/     // exactly 5 word characters
+
+// Range
+/\d{2,4}/   // 2 to 4 digits
+/\w{1,}/    // 1 or more word characters
+
+// Common quantifiers
+/\d*/       // zero or more digits
+/\d+/       // one or more digits
+/\d?/       // zero or one digit (optional)
+
+/\w{0,}/    // zero or more (same as *)
+/\w{1,}/    // one or more (same as +)
+/\w{0,1}/   // zero or one (same as ?)
+
+// Greedy vs Lazy
+/\d+/       // greedy: matches as many as possible
+/\d+?/      // lazy: matches as few as possible</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Anchors and Boundaries
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Anchors match positions in the string rather than characters.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Start and end of string
+/^hello/    // matches "hello" at start of string
+/world$/    // matches "world" at end of string
+/^exact$/   // matches entire string "exact"
+
+// Word boundaries
+/\bword\b/  // matches "word" as a whole word
+/\Bword\B/  // matches "word" when not a whole word
+
+// Examples
+const text = "hello world hello";
+console.log(text.match(/^hello/));     // ["hello"]
+console.log(text.match(/world$/));     // ["world"]
+console.log(text.match(/\bhello\b/g)); // ["hello", "hello"]</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Groups and Capturing
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Parentheses create groups that can be referenced later.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Capturing Groups:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Basic capturing
+const datePattern = /(\d{2})-(\d{2})-(\d{4})/;
+const match = "25-12-2023".match(datePattern);
+console.log(match[0]); // "25-12-2023" (full match)
+console.log(match[1]); // "25" (first group)
+console.log(match[2]); // "12" (second group)
+console.log(match[3]); // "2023" (third group)
+
+// Named capturing groups
+const namedPattern = /(?<day>\d{2})-(?<month>\d{2})-(?<year>\d{4})/;
+const namedMatch = "25-12-2023".match(namedPattern);
+console.log(namedMatch.groups.day);   // "25"
+console.log(namedMatch.groups.month); // "12"
+console.log(namedMatch.groups.year);  // "2023"</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Non-Capturing Groups:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Non-capturing groups (?:...)
+const pattern = /(?:https?|ftp):\/\/([^/\r\n]+)(\/[^\r\n]*)?/;
+const url = "https://www.example.com/path";
+const match = url.match(pattern);
+console.log(match[1]); // "www.example.com" (domain)
+console.log(match[2]); // "/path" (path)</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Using Regex in JavaScript
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript provides several methods to work with regular expressions.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">String Methods:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const text = "Hello, my email is john@example.com and my phone is 123-456-7890";
+
+// match() - returns array of matches
+const emails = text.match(/[\w.-]+@[\w.-]+\.\w+/g);
+console.log(emails); // ["john@example.com"]
+
+// search() - returns index of first match
+const emailIndex = text.search(/[\w.-]+@[\w.-]+\.\w+/);
+console.log(emailIndex); // 21
+
+// replace() - replace matches
+const cleaned = text.replace(/\d{3}-\d{3}-\d{4}/g, '[PHONE]');
+console.log(cleaned); // "Hello, my email is john@example.com and my phone is [PHONE]"
+
+// split() - split string by regex
+const words = text.split(/\s+/);
+console.log(words); // ["Hello,", "my", "email", "is", "john@example.com", "and", "my", "phone", "is", "123-456-7890"]</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">RegExp Methods:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const pattern = /\b\w+\b/g;
+const text = "Hello world from JavaScript";
+
+// test() - returns true/false if pattern matches
+console.log(pattern.test(text)); // true
+
+// exec() - returns match details and updates lastIndex
+let match;
+while ((match = pattern.exec(text)) !== null) {
+    console.log(`Found "${match[0]}" at position ${match.index}`);
+}
+// Output:
+// Found "Hello" at position 0
+// Found "world" at position 6
+// Found "from" at position 12
+// Found "JavaScript" at position 17</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Practical Examples
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Real-world regex patterns for common validation and parsing tasks.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Email Validation:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
+
+console.log(isValidEmail('john@example.com'));     // true
+console.log(isValidEmail('invalid-email'));        // false
+console.log(isValidEmail('test@domain.co.uk'));    // true</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">URL Validation:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function isValidUrl(url) {
+    const urlRegex = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+    return urlRegex.test(url);
+}
+
+console.log(isValidUrl('https://www.example.com'));     // true
+console.log(isValidUrl('http://example.com/path'));     // true
+console.log(isValidUrl('invalid-url'));                 // false</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Phone Number Formatting:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function formatPhoneNumber(phone) {
+    // Remove all non-digits
+    const cleaned = phone.replace(/\D/g, '');
+    
+    // Format as (XXX) XXX-XXXX
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+        return `(${match[1]}) ${match[2]}-${match[3]}`;
+    }
+    return phone; // Return original if doesn't match
+}
+
+console.log(formatPhoneNumber('1234567890'));     // "(123) 456-7890"
+console.log(formatPhoneNumber('123-456-7890'));   // "(123) 456-7890"
+console.log(formatPhoneNumber('(123)456-7890'));  // "(123) 456-7890"</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Extracting Data from Text:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function extractHashtags(text) {
+    const hashtagRegex = /#\w+/g;
+    return text.match(hashtagRegex) || [];
+}
+
+function extractMentions(text) {
+    const mentionRegex = /@\w+/g;
+    return text.match(mentionRegex) || [];
+}
+
+function extractUrls(text) {
+    const urlRegex = /https?:\/\/[^\s]+/g;
+    return text.match(urlRegex) || [];
+}
+
+const tweet = "Check out @john's new post about #JavaScript! Visit https://example.com for more info.";
+
+console.log(extractHashtags(tweet));  // ["#JavaScript"]
+console.log(extractMentions(tweet));   // ["@john"]
+console.log(extractUrls(tweet));       // ["https://example.com"]</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Common Pitfalls and Best Practices
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Tips for writing effective and maintainable regular expressions.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Mistakes:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Forgetting the global flag when you want all matches</li>
+                <li>Not escaping special characters</li>
+                <li>Using greedy quantifiers when lazy ones are needed</li>
+                <li>Not considering case sensitivity</li>
+                <li>Creating overly complex patterns that are hard to maintain</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Best Practices:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Test your regex thoroughly with various inputs</li>
+                <li>Use online regex testers for development</li>
+                <li>Add comments to complex patterns</li>
+                <li>Use named groups for better readability</li>
+                <li>Consider performance - avoid catastrophic backtracking</li>
+                <li>Keep patterns simple and focused</li>
+                <li>Use regex only when appropriate (sometimes string methods are better)</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Performance Tips:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Bad: Catastrophic backtracking
+const badRegex = /(a+)+b/;
+badRegex.test("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaac"); // Very slow!
+
+// Better: More specific pattern
+const goodRegex = /a+b/;
+
+// Use non-capturing groups when you don't need the captured content
+const optimized = /(?:https?|ftp):\/\/([^/\r\n]+)(\/[^\r\n]*)?/;
+
+// Pre-compile regex for reuse
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+function validateEmails(emails) {
+    return emails.filter(email => emailRegex.test(email));
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Advanced Patterns
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                More advanced regex techniques for complex matching scenarios.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Lookahead and Lookbehind:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Positive lookahead (?=...)
+const password = "Password123!";
+const hasNumber = /(?=.*\d)/.test(password); // true
+
+// Negative lookahead (?!...)
+const noSpecialChars = /^(?!.*[!@#$%^&*])/.test("HelloWorld"); // true
+
+// Positive lookbehind (?<=...)
+const afterDollar = /(?<=\$)\d+/.exec("$100 and $200");
+// Returns ["100"]
+
+// Negative lookbehind (?<!...)
+const notAfterDollar = /(?<!\$)\d+/.exec("$100 and 200");
+// Returns ["200"]</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Backreferences:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Match repeated words
+const repeatedWords = /\b(\w+)\s+\1\b/gi;
+const text = "The the quick brown fox";
+console.log(text.match(repeatedWords)); // ["the the"]
+
+// Match HTML tags
+const htmlTags = /<(\w+)>[^<]*<\/\1>/g;
+const html = "&lt;p&gt;Hello&lt;/p&gt; &lt;div&gt;World&lt;/div&gt;";
+console.log(html.match(htmlTags)); // ["&lt;p&gt;Hello&lt;/p&gt;", "&lt;div&gt;World&lt;/div&gt;"]</code></pre>
+        </details>
+    </div>
+</body>
+</html>

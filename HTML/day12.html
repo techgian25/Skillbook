@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12: CSS Animations & Transitions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 12: CSS Animations & Transitions
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                CSS Transitions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Smooth changes between states:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Transition Properties:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>transition-property - What to animate</li>
+                <li>transition-duration - How long</li>
+                <li>transition-timing-function - Animation curve</li>
+                <li>transition-delay - Delay before start</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Timing Functions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Animation speeds:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Functions:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>ease - Slow start and end</li>
+                <li>ease-in - Slow start</li>
+                <li>ease-out - Slow end</li>
+                <li>linear - Constant speed</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                CSS Animations
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Create complex animations:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Animation Properties:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>@keyframes - Define animation stages</li>
+                <li>animation-name - Keyframes name</li>
+                <li>animation-duration - Length</li>
+                <li>animation-iteration-count - Repeat times</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Keyframe Syntax
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Define animation stages:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Example:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>0% { opacity: 0; }</li>
+                <li>50% { opacity: 0.5; }</li>
+                <li>100% { opacity: 1; }</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Create smooth transitions</li>
+                <li>Define animations</li>
+                <li>Use keyframes</li>
+                <li>Control animation timing</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: CSS Animations & Transitions
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Which property defines transition duration?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) transition-duration</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) animation-duration</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) transition-time</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) animate-duration</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. To create keyframes you use?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) @keyframes</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) @frames</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) @animation</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) @animate</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Which property sets animation delay?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) animation-delay</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) transition-delay</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) delay</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) wait</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. For hover effect transition you use?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) :hover</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) :active</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) :focus</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) :visit</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. Which pseudo-state triggers when animation ends?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) animationend</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) animationfinish</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) animend</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) endanimation</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+<script>
+function checkQuiz(){
+    const answers={q1:'a',q2:'a',q3:'a',q4:'a',q5:'a'};
+    const explanations={
+        q1:'transition-duration sets how long a transition takes.',
+        q2:'@keyframes defines keyframes for animation.',
+        q3:'animation-delay adds a delay before start.',
+        q4:':hover is used for hover effects.',
+        q5:'animationend event fires when animation ends.'
+    };
+    let score=0;
+    const results=[];
+    for(let i=1;i<=5;i++){
+        const sel=document.querySelector(`input[name="q${i}"]:checked`);
+        const correct=answers[`q${i}`];
+        if(sel&&sel.value===correct){
+            score++;
+            results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
+        } else {
+            results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+        }
+    }
+    document.getElementById('score').textContent=`You got ${score} out of 5 correct!`;
+    document.getElementById('answers').innerHTML=results.join('');
+    document.getElementById('quiz-results').classList.remove('hidden');
+}
+function resetQuiz(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.getElementById('quiz-results').classList.add('hidden');}
+</script>
+</body>
+
+</html>

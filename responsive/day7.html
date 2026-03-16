@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7 - Bootstrap Grid Utilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 7: Grid utilities &amp; breakpoints (Bootstrap)</h1>
+        
+        <!-- Section 1 -->
+        <div class="mb-6 border-l-4 border-blue-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Responsive Breakpoints</h2>
+                <span class="text-2xl text-blue-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Bootstrap defines breakpoints for different device sizes:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>XS (extra small): &lt;576px - Mobile phones</li>
+                    <li>SM (small): ≥576px - Landscape phones</li>
+                    <li>MD (medium): ≥768px - Tablets</li>
+                    <li>LG (large): ≥992px - Desktops</li>
+                    <li>XL (extra large): ≥1200px - Large desktops</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="mb-6 border-l-4 border-green-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Column Classes</h2>
+                <span class="text-2xl text-green-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>col-12</code> - Full width (1/12 * 12)</li>
+                    <li><code>col-6</code> - Half width (1/12 * 6)</li>
+                    <li><code>col-4</code> - One-third width (1/12 * 4)</li>
+                    <li><code>col-3</code> - One-quarter width (1/12 * 3)</li>
+                    <li><code>col-md-6</code> - Half width on medium+ screens</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="mb-6 border-l-4 border-purple-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Offset & Alignment</h2>
+                <span class="text-2xl text-purple-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>offset-3</code> - Move column 3 spaces right</li>
+                    <li><code>row-cols-2</code> - Auto-fit 2 columns per row</li>
+                    <li><code>justify-content-between</code> - Space items apart</li>
+                    <li><code>align-items-center</code> - Vertically center items</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="mb-6 border-l-4 border-orange-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-orange-50 hover:bg-orange-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Advanced Grid Example</h2>
+                <span class="text-2xl text-orange-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Responsive layout that adapts to screen size:</p>
+                <div class="bg-gray-100 p-4 rounded border border-gray-300">
+                    <code class="text-sm">&lt;div class="row"&gt;<br>&nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Item 1&lt;/div&gt;<br>&nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Item 2&lt;/div&gt;<br>&nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Item 3&lt;/div&gt;<br>&nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Item 4&lt;/div&gt;<br>&lt;/div&gt;</code>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="mb-6 border-l-4 border-red-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Layout Tips</h2>
+                <span class="text-2xl text-red-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Always wrap columns in a row</li>
+                    <li>Use responsive column classes for flexible layouts</li>
+                    <li>Combine offset classes to center content</li>
+                    <li>Test breakpoints on real devices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('span');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                chevron.textContent = '▶';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

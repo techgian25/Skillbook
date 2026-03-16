@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9: ES6+ Features</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 9: ES6+ Features
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is ES6+?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                ES6 (ECMAScript 2015) introduced major improvements to JavaScript. ES6+ refers to ES6 and all subsequent versions with new features.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Key Benefits:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>More readable and maintainable code</li>
+                <li>New data structures and methods</li>
+                <li>Better support for asynchronous programming</li>
+                <li>Improved module system</li>
+                <li>Enhanced object and array handling</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Arrow Functions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Arrow functions provide a shorter syntax for writing function expressions and automatically bind 'this'.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Basic Syntax:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Traditional function
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+const add = (a, b) => a + b;
+
+// Single parameter (parentheses optional)
+const square = x => x * x;
+
+// No parameters
+const greet = () => 'Hello World!';
+
+// Multiple lines
+const calculate = (a, b) => {
+    const sum = a + b;
+    return sum * 2;
+};</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">'this' Binding:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Traditional function - 'this' refers to the calling context
+const obj = {
+    name: 'Object',
+    traditional: function() {
+        setTimeout(function() {
+            console.log(this.name); // undefined
+        }, 100);
+    }
+};
+
+// Arrow function - 'this' refers to the enclosing scope
+const obj = {
+    name: 'Object',
+    arrow: function() {
+        setTimeout(() => {
+            console.log(this.name); // 'Object'
+        }, 100);
+    }
+};</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Template Literals
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Template literals provide an easier way to create strings with embedded expressions and multi-line strings.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// String interpolation
+const name = 'John';
+const age = 30;
+const message = `Hello, my name is ${name} and I am ${age} years old.`;
+
+// Multi-line strings
+const html = `
+    &lt;div&gt;
+        &lt;h1&gt;${name}&lt;/h1&gt;
+        &lt;p&gt;Age: ${age}&lt;/p&gt;
+    &lt;/div&gt;
+`;
+
+// Expression evaluation
+const a = 5, b = 10;
+const result = `The sum of ${a} and ${b} is ${a + b}.`;
+
+// Tagged templates
+function highlight(strings, ...values) {
+    return strings.reduce((result, string, i) => {
+        return result + string + (values[i] ? `&lt;strong&gt;${values[i]}&lt;/strong&gt;` : '');
+    }, '');
+}
+
+const highlighted = highlight`Hello ${name}, you are ${age} years old!`;</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Destructuring
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Destructuring allows you to unpack values from arrays or properties from objects into distinct variables.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Array Destructuring:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const numbers = [1, 2, 3, 4, 5];
+
+// Basic destructuring
+const [first, second] = numbers;
+console.log(first, second); // 1, 2
+
+// Skip elements
+const [a, , c] = numbers;
+console.log(a, c); // 1, 3
+
+// Rest operator
+const [head, ...tail] = numbers;
+console.log(head, tail); // 1, [2, 3, 4, 5]
+
+// Default values
+const [x = 10, y = 20] = [5];
+console.log(x, y); // 5, 20</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Object Destructuring:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const person = {
+    name: 'John',
+    age: 30,
+    city: 'New York'
+};
+
+// Basic destructuring
+const { name, age } = person;
+console.log(name, age); // 'John', 30
+
+// Different variable names
+const { name: fullName, age: years } = person;
+console.log(fullName, years); // 'John', 30
+
+// Default values
+const { name, country = 'USA' } = person;
+console.log(name, country); // 'John', 'USA'
+
+// Nested destructuring
+const user = {
+    id: 1,
+    profile: {
+        firstName: 'John',
+        lastName: 'Doe'
+    }
+};
+
+const { profile: { firstName, lastName } } = user;
+console.log(firstName, lastName); // 'John', 'Doe'</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Spread and Rest Operators
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The spread operator (...) expands iterables, while the rest operator collects multiple elements.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Spread Operator:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Array spreading
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+
+// Object spreading
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3, d: 4 }
+
+// Function arguments
+function sum(a, b, c) {
+    return a + b + c;
+}
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // 6
+
+// Copying arrays/objects
+const original = [1, 2, 3];
+const copy = [...original]; // Shallow copy</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Rest Operator:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Function parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+
+// Array destructuring
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+console.log(first, second, rest); // 1, 2, [3, 4, 5]
+
+// Object destructuring
+const { a, b, ...others } = { a: 1, b: 2, c: 3, d: 4 };
+console.log(a, b, others); // 1, 2, { c: 3, d: 4 }</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Default Parameters
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Default parameters allow you to set default values for function parameters.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Basic default parameters
+function greet(name = 'Guest', greeting = 'Hello') {
+    return `${greeting}, ${name}!`;
+}
+
+console.log(greet()); // 'Hello, Guest!'
+console.log(greet('John')); // 'Hello, John!'
+console.log(greet('John', 'Hi')); // 'Hi, John!'
+
+// Default parameters with expressions
+function createUser(name, age = 18, active = true) {
+    return { name, age, active };
+}
+
+// Can reference previous parameters
+function createConfig(baseURL, path = '/', timeout = 5000) {
+    return { baseURL, path, timeout };
+}
+
+// With destructuring
+function processUser({ name = 'Anonymous', age = 18 } = {}) {
+    return { name, age };
+}
+
+console.log(processUser()); // { name: 'Anonymous', age: 18 }
+console.log(processUser({ name: 'John' })); // { name: 'John', age: 18 }</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Enhanced Object Literals
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Shorter syntax for defining object properties and methods.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Property shorthand
+const name = 'John';
+const age = 30;
+const person = { name, age }; // { name: 'John', age: 30 }
+
+// Method shorthand
+const calculator = {
+    add(a, b) {
+        return a + b;
+    },
+    subtract(a, b) {
+        return a - b;
+    }
+};
+
+// Computed property names
+const propName = 'dynamicProperty';
+const obj = {
+    [propName]: 'value',
+    ['computed' + 'Key']: 'another value'
+};
+
+// Traditional vs ES6
+const traditional = {
+    method: function() {
+        return 'traditional';
+    }
+};
+
+const es6 = {
+    method() {
+        return 'ES6';
+    }
+};</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Classes
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Classes provide a cleaner syntax for creating objects and dealing with inheritance.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Class declaration
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet() {
+        return `Hello, my name is ${this.name}`;
+    }
+    
+    birthday() {
+        this.age++;
+        return `Happy birthday! You are now ${this.age}`;
+    }
+}
+
+// Creating instances
+const john = new Person('John', 30);
+console.log(john.greet()); // 'Hello, my name is John'
+
+// Inheritance
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age); // Call parent constructor
+        this.jobTitle = jobTitle;
+    }
+    
+    work() {
+        return `${this.name} is working as ${this.jobTitle}`;
+    }
+}
+
+const employee = new Employee('Jane', 25, 'Developer');
+console.log(employee.greet()); // 'Hello, my name is Jane'
+console.log(employee.work()); // 'Jane is working as Developer'</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Modules (ES6 Modules)
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                ES6 modules allow you to split code into separate files and import/export functionality.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Exporting:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Named exports
+export const PI = 3.14159;
+export function calculateArea(radius) {
+    return PI * radius * radius;
+}
+
+// Default export
+export default class Calculator {
+    add(a, b) { return a + b; }
+    subtract(a, b) { return a - b; }
+}
+
+// Mixed exports
+const utils = {
+    formatDate: (date) => date.toLocaleDateString(),
+    capitalize: (str) => str.charAt(0).toUpperCase() + str.slice(1)
+};
+
+export { utils };
+export default utils;</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Importing:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Named imports
+import { PI, calculateArea } from './math.js';
+
+// Default import
+import Calculator from './Calculator.js';
+
+// Mixed imports
+import utils, { formatDate } from './utils.js';
+
+// Import everything
+import * as MathUtils from './math.js';
+
+// Dynamic imports (returns a promise)
+const module = await import('./dynamicModule.js');</code></pre>
+        </details>
+    </div>
+</body>
+</html>

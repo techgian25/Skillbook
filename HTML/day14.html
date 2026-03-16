@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14: CSS Variables & Functions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 14: CSS Variables & Functions
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                CSS Variables
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Reusable values in CSS:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Variable Basics:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Define: --primary-color: #0088cc;</li>
+                <li>Use: var(--primary-color)</li>
+                <li>Scope: Root or local</li>
+                <li>Fallback: var(--color, blue)</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                CSS Functions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Built-in CSS functions:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Functions:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>calc() - Mathematical calculations</li>
+                <li>url() - Load resources</li>
+                <li>rgb()/rgba() - Color values</li>
+                <li>linear-gradient() - Color gradients</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                calc() Function
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Perform calculations:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Examples:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>width: calc(100% - 20px);</li>
+                <li>height: calc(100vh - 60px);</li>
+                <li>Combine units: px, %, em, etc.</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Gradient Functions
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Create color gradients:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Types:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>linear-gradient(direction, colors)</li>
+                <li>radial-gradient(shape, colors)</li>
+                <li>conic-gradient() - Rotating colors</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Create CSS variables</li>
+                <li>Use calc() function</li>
+                <li>Build gradient backgrounds</li>
+                <li>Create dynamic themes</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: CSS Variables & Functions
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Syntax to declare variable?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) --main-color: blue;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) var(main-color): blue;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) $main-color: blue;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) @main-color: blue;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. How to use variable?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) var(--main-color)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) $main-color</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) --main-color()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) root(--main-color)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. calc() allows?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) basic calculations</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) conditional logic</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) loops</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) imports</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Variables defined in :root are?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) global</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) local</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) inline</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) static</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. Which function creates a gradient?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) linear-gradient()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) gradient()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) color-gradient()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) bg-gradient()</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+<script>
+function checkQuiz(){
+    const answers={q1:'a',q2:'a',q3:'a',q4:'a',q5:'a'};
+    const explanations={
+        q1:'Variables use --var-name in :root.',
+        q2:'Use var(--main-color) to retrieve variable.',
+        q3:'calc() performs calculations.',
+        q4:':root scope makes them global.',
+        q5:'linear-gradient() creates gradients.'
+    };
+    let score=0;
+    const results=[];
+    for(let i=1;i<=5;i++){
+        const sel=document.querySelector(`input[name="q${i}"]:checked`);
+        const correct=answers[`q${i}`];
+        if(sel&&sel.value===correct){
+            score++;
+            results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
+        } else {
+            results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+        }
+    }
+    document.getElementById('score').textContent=`You got ${score} out of 5 correct!`;
+    document.getElementById('answers').innerHTML=results.join('');
+    document.getElementById('quiz-results').classList.remove('hidden');
+}
+function resetQuiz(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.getElementById('quiz-results').classList.add('hidden');}
+</script>
+</body>
+
+</html>

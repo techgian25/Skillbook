@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10: Responsive Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 10: Responsive Design
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is Responsive Design?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Creating websites that work on all devices:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Key Principles:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Mobile-first approach</li>
+                <li>Flexible layouts</li>
+                <li>Flexible images</li>
+                <li>Media queries</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Viewport Meta Tag
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Essential for responsive design:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Meta Tag:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</li>
+                <li>Tells browser how to render page</li>
+                <li>Essential for mobile devices</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Media Queries
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Apply styles based on screen size:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Breakpoints:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Mobile: max-width: 480px</li>
+                <li>Tablet: max-width: 768px</li>
+                <li>Desktop: max-width: 1024px</li>
+                <li>Large: min-width: 1200px</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Responsive Units
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Use flexible units:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Unit Types:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>% - Percentage of parent</li>
+                <li>em - Relative to font size</li>
+                <li>rem - Relative to root font size</li>
+                <li>vw/vh - Viewport width/height</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Create responsive layouts</li>
+                <li>Use media queries</li>
+                <li>Design mobile-first</li>
+                <li>Test across devices</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Responsive Design
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Which unit is based on viewport width?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) px</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) em</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) vw</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) rem</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. What does mobile-first strategy mean?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) design for mobile then scale up</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) design for desktop then scale down</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) only mobile design</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) ignore mobile</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. A media query starts with?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) @viewport</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) @media</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) @screen</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) @query</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. The viewport meta tag sets width to?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) 100px</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) device-width</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) auto</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) 50%</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. To hide an element on small screens, you use?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) display:none in media query</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) visibility:hidden</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) opacity:0</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) position:absolute</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+<script>
+function checkQuiz(){
+    const answers={q1:'c',q2:'a',q3:'b',q4:'b',q5:'a'};
+    const explanations={
+        q1:'vw is viewport width unit.',
+        q2:'Mobile-first means start with mobile CSS.',
+        q3:'Media queries start with @media.',
+        q4:'Viewport meta sets width to device-width.',
+        q5:'Use display:none in small-screen media query.'
+    };
+    let score=0;
+    const results=[];
+    for(let i=1;i<=5;i++){
+        const sel=document.querySelector(`input[name="q${i}"]:checked`);
+        const correct=answers[`q${i}`];
+        if(sel&&sel.value===correct){
+            score++;
+            results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
+        } else {
+            results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+        }
+    }
+    document.getElementById('score').textContent=`You got ${score} out of 5 correct!`;
+    document.getElementById('answers').innerHTML=results.join('');
+    document.getElementById('quiz-results').classList.remove('hidden');
+}
+function resetQuiz(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.getElementById('quiz-results').classList.add('hidden');}
+</script>
+</body>
+
+</html>

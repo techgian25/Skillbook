@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11: Modules</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 11: Modules
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Modules?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Modules allow you to split your code into separate files, making it more organized, reusable, and maintainable. Each module has its own scope.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Benefits of Modules:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Code organization and maintainability</li>
+                <li>Reusability across different parts of the application</li>
+                <li>Encapsulation (private variables/functions)</li>
+                <li>Dependency management</li>
+                <li>Easier testing and debugging</li>
+                <li>Better performance (tree shaking, lazy loading)</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                ES6 Modules (ESM)
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                ES6 introduced a native module system for JavaScript. ES6 modules are statically analyzed, which allows for better optimization.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Basic Export/Import:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// math.js - Exporting module
+export const PI = 3.14159;
+
+export function add(a, b) {
+    return a + b;
+}
+
+export function multiply(a, b) {
+    return a * b;
+}
+
+// main.js - Importing module
+import { PI, add, multiply } from './math.js';
+
+console.log(PI); // 3.14159
+console.log(add(2, 3)); // 5
+console.log(multiply(4, 5)); // 20</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Default Exports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// calculator.js
+export default class Calculator {
+    add(a, b) { return a + b; }
+    subtract(a, b) { return a - b; }
+}
+
+// main.js
+import Calculator from './calculator.js';
+
+const calc = new Calculator();
+console.log(calc.add(5, 3)); // 8</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Named vs Default Exports
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can export multiple named exports from a module, or one default export.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Named Exports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// utils.js
+export const formatDate = (date) => date.toLocaleDateString();
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+export const generateId = () => Math.random().toString(36).substr(2, 9);
+
+// Usage
+import { formatDate, capitalize } from './utils.js';
+import { generateId as idGenerator } from './utils.js'; // Aliased import</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Default Exports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// One default export per module
+export default function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Or
+const greet = (name) => `Hello, ${name}!`;
+export default greet;
+
+// Usage
+import greet from './greetings.js';
+console.log(greet('World')); // 'Hello, World!'</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Mixed Exports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// api.js
+const API_BASE_URL = 'https://api.example.com';
+
+export const getUsers = () => fetch(`${API_BASE_URL}/users`);
+export const getPosts = () => fetch(`${API_BASE_URL}/posts`);
+
+export default {
+    baseURL: API_BASE_URL,
+    getUsers,
+    getPosts
+};
+
+// Usage
+import api, { getUsers, getPosts } from './api.js';</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Dynamic Imports
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Dynamic imports allow you to load modules asynchronously, which is useful for code splitting and lazy loading.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Static import (loaded at module initialization)
+import { heavyFunction } from './heavyModule.js';
+
+// Dynamic import (loaded when needed)
+async function loadHeavyModule() {
+    try {
+        const module = await import('./heavyModule.js');
+        module.heavyFunction();
+    } catch (error) {
+        console.log('Failed to load module:', error);
+    }
+}
+
+// Usage
+document.querySelector('#loadButton').addEventListener('click', loadHeavyModule);
+
+// Conditional loading
+async function loadLocaleModule(locale) {
+    const module = await import(`./locales/${locale}.js`);
+    return module.translations;
+}
+
+// React-like lazy loading
+const LazyComponent = React.lazy(() => import('./HeavyComponent.js'));</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Module Patterns (Pre-ES6)
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Before ES6 modules, JavaScript used various patterns to achieve modularity.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">IIFE (Immediately Invoked Function Expression):</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Module pattern using IIFE
+const Calculator = (function() {
+    // Private variables
+    let memory = 0;
+    
+    // Private function
+    function validateNumber(num) {
+        return typeof num === 'number' && !isNaN(num);
+    }
+    
+    // Public API
+    return {
+        add: function(a, b) {
+            if (validateNumber(a) && validateNumber(b)) {
+                return a + b;
+            }
+            throw new Error('Invalid numbers');
+        },
+        getMemory: function() {
+            return memory;
+        },
+        setMemory: function(value) {
+            memory = value;
+        }
+    };
+})();
+
+// Usage
+console.log(Calculator.add(5, 3)); // 8
+Calculator.setMemory(42);
+console.log(Calculator.getMemory()); // 42</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">CommonJS (Node.js):</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// math.js
+const PI = 3.14159;
+
+function add(a, b) {
+    return a + b;
+}
+
+module.exports = {
+    PI,
+    add
+};
+
+// Or
+module.exports.PI = PI;
+module.exports.add = add;
+
+// main.js
+const math = require('./math');
+console.log(math.PI); // 3.14159
+console.log(math.add(2, 3)); // 5</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Module Bundlers
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Module bundlers combine multiple modules into a single file for browser usage.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Webpack Configuration:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// webpack.config.js
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
+    mode: 'development'
+};</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Popular Bundlers:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Webpack</strong> - Most popular, highly configurable</li>
+                <li><strong>Parcel</strong> - Zero configuration bundler</li>
+                <li><strong>Rollup</strong> - Optimized for libraries</li>
+                <li><strong>Vite</strong> - Fast development server, uses ES modules</li>
+                <li><strong>esbuild</strong> - Extremely fast, written in Go</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Tree Shaking
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Tree shaking is a technique to eliminate dead code from bundles, reducing file size.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// utils.js
+export const usedFunction = () => 'I am used';
+export const unusedFunction = () => 'I am not used';
+export const anotherUnused = () => 'Also not used';
+
+// main.js
+import { usedFunction } from './utils.js';
+// Only usedFunction will be included in the bundle
+
+// For side-effect imports, use explicit imports
+import './styles.css'; // CSS is considered a side effect
+
+// Or mark modules as having side effects in package.json
+{
+    "sideEffects": [
+        "*.css",
+        "./src/polyfills.js"
+    ]
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Module Resolution
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                How JavaScript resolves module imports and file paths.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Relative Imports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// From src/components/Button.js
+import { Icon } from '../icons/Icon.js';     // Go up one level
+import styles from './Button.module.css';   // Same directory
+import utils from '../../utils/helpers.js'; // Go up two levels</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Absolute Imports:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Configure path mapping in bundler
+import { api } from '@/services/api';       // @/ maps to src/
+import Button from 'components/Button';     // components/ maps to src/components/
+import utils from 'utils';                  // utils/ maps to src/utils/</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">File Extensions:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Usually optional in modern bundlers
+import config from './config.js';    // .js extension
+import styles from './styles.css';   // .css extension
+import data from './data.json';      // .json extension
+
+// TypeScript
+import Component from './Component'; // .ts or .tsx inferred</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Best Practices
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Guidelines for organizing and using modules effectively.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Organization:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Group related functionality in the same module</li>
+                <li>Use index.js files for clean imports</li>
+                <li>Keep modules focused on a single responsibility</li>
+                <li>Use consistent naming conventions</li>
+                <li>Avoid circular dependencies</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Import/Export Patterns:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Barrel exports (index.js)
+export { default as Button } from './Button.js';
+export { default as Input } from './Input.js';
+export { default as Modal } from './Modal.js';
+
+// Usage
+import { Button, Input, Modal } from './components';
+
+// Prefer named exports for multiple exports
+// Prefer default exports for single exports
+
+// Avoid namespace imports unless necessary
+// import * as Utils from './utils'; // Avoid
+// import { formatDate, capitalize } from './utils'; // Prefer</code></pre>
+        </details>
+    </div>
+</body>
+</html>

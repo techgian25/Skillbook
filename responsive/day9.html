@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 - Bootstrap Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 9: Components – Modals & Navbars (Bootstrap)</h1>
+        
+        <!-- Section 1 -->
+        <div class="mb-6 border-l-4 border-blue-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Bootstrap Navbars</h2>
+                <span class="text-2xl text-blue-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Navbars are responsive navigation headers for your site or app. They include support for branding, navigation, and other components.</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>navbar</code> - Main navbar container</li>
+                    <li><code>navbar-expand-lg</code> - When to expand the navbar</li>
+                    <li><code>navbar-light</code> or <code>navbar-dark</code> - Navbar color scheme</li>
+                    <li><code>nav-link</code> - Navigation links</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="mb-6 border-l-4 border-green-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Modal Components</h2>
+                <span class="text-2xl text-green-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Modals are dialog boxes/popups that overlay the main content. Perfect for alerts, confirmations, and forms.</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><code>modal</code> - Main modal container</li>
+                    <li><code>modal-dialog</code> - Modal dialog wrapper</li>
+                    <li><code>modal-content</code> - Modal content area</li>
+                    <li><code>modal-header</code>, <code>modal-body</code>, <code>modal-footer</code></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="mb-6 border-l-4 border-purple-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Modal Features</h2>
+                <span class="text-2xl text-purple-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Scrollable modals for large content</li>
+                    <li>Centered modals (vertically)</li>
+                    <li><code>modal-lg</code>, <code>modal-sm</code> - Size variants</li>
+                    <li>Backdrop options (show/hide backdrop)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="mb-6 border-l-4 border-orange-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-orange-50 hover:bg-orange-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Navbar Example</h2>
+                <span class="text-2xl text-orange-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Basic navbar structure:</p>
+                <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
+                    <code class="text-sm">&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;<br>&nbsp;&nbsp;&lt;div class="container"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="navbar-brand"&gt;Logo&lt;/a&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="navbar-toggler"&gt;...&lt;/button&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="collapse navbar-collapse"&gt;...&lt;/div&gt;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/nav&gt;</code>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="mb-6 border-l-4 border-red-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Best Practices</h2>
+                <span class="text-2xl text-red-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Use modals for important user interactions</li>
+                    <li>Keep navbar content minimal on mobile</li>
+                    <li>Always provide a close button for modals</li>
+                    <li>Test modals on different screen sizes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('span');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                chevron.textContent = '▶';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

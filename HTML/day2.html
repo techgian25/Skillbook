@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: HTML Elements & Attributes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 2: HTML Elements & Attributes
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Common HTML Elements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                HTML provides many elements for different types of content:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Text Elements:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;strong&gt; - Bold text (semantic)</li>
+                <li>&lt;em&gt; - Italic text (semantic)</li>
+                <li>&lt;u&gt; - Underlined text</li>
+                <li>&lt;mark&gt; - Highlighted text</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Links and Images
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Creating interactive content with links and media:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Key Elements:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;a href="url"&gt; - Anchor tag for links</li>
+                <li>&lt;img src="path" alt="text"&gt; - Image tag</li>
+                <li>&lt;video&gt; - Video content</li>
+                <li>&lt;audio&gt; - Audio content</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Container Elements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Use containers to organize content:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Important Containers:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;div&gt; - Generic block container</li>
+                <li>&lt;span&gt; - Generic inline container</li>
+                <li>&lt;section&gt; - Thematic grouping</li>
+                <li>&lt;article&gt; - Independent content</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Important Attributes
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Attributes provide additional information:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Attributes:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>href - URL destination for links</li>
+                <li>src - Source path for images</li>
+                <li>alt - Alternative text for images</li>
+                <li>title - Hover tooltip text</li>
+                <li>class - CSS class name</li>
+                <li>id - Unique identifier</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Use text formatting elements</li>
+                <li>Create links and add images</li>
+                <li>Organize content with containers</li>
+                <li>Apply attributes correctly</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What is an HTML attribute?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) A nested HTML tag</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) Additional information about elements</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) A CSS property</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) A JavaScript variable</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. How do you create a clickable link in HTML?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) &lt;link href="url"&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) &lt;a href="url"&gt;Text&lt;/a&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) &lt;url&gt;Text&lt;/url&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) &lt;anchor&gt;Text&lt;/anchor&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. What is the alt attribute used for?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) Alternative styling</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) Alternative image text for accessibility</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) Alternate HTML versions</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) Alternative layout</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. How do you add an image to a webpage?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) &lt;image src="pic.jpg"&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) &lt;img src="pic.jpg"&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) &lt;picture src="pic.jpg"&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) &lt;img href="pic.jpg"&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. What is the difference between id and class?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) They are identical</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) id is unique, class can be reused</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) class is unique, id is for styling</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) id is for HTML, class is for CSS</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            };
+
+            const explanations = {
+                q1: 'Attributes provide additional information about HTML elements.',
+                q2: 'The &lt;a&gt; tag with href creates clickable hyperlinks.',
+                q3: 'The alt attribute provides text for images when they cannot load.',
+                q4: 'The &lt;img&gt; tag embeds images using the src attribute.',
+                q5: 'id is unique to one element, class can be applied to multiple elements.'
+            };
+
+            let score = 0;
+            const results = [];
+
+            Object.keys(answers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                const correct = answers[question];
+
+                if (selected && selected.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`);
+                }
+            });
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15: Advanced Topics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 15: Advanced Topics
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Closures
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                A closure is a function that has access to variables in its outer (enclosing) scope, even after the outer function has returned.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Basic Closure:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function outerFunction() {
+    const outerVariable = 'I am from outer scope';
+    
+    function innerFunction() {
+        console.log(outerVariable); // Can access outerVariable
+    }
+    
+    return innerFunction;
+}
+
+const closure = outerFunction();
+closure(); // "I am from outer scope"
+
+// The inner function "closes over" the outer variable</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Practical Example - Counter:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function createCounter() {
+    let count = 0; // Private variable
+    
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+
+const counter = createCounter();
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.getCount());   // 2
+
+// count variable is encapsulated and only accessible through the returned methods</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Module Pattern with Closures:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const CalculatorModule = (function() {
+    // Private variables and functions
+    let memory = 0;
+    const PI = 3.14159;
+    
+    function validateNumber(num) {
+        return typeof num === 'number' && !isNaN(num);
+    }
+    
+    // Public API
+    return {
+        add: function(a, b) {
+            if (validateNumber(a) && validateNumber(b)) {
+                return a + b;
+            }
+            throw new Error('Invalid input');
+        },
+        
+        getMemory: function() {
+            return memory;
+        },
+        
+        setMemory: function(value) {
+            if (validateNumber(value)) {
+                memory = value;
+            }
+        },
+        
+        getPI: function() {
+            return PI;
+        }
+    };
+})();
+
+// Usage
+console.log(CalculatorModule.add(5, 3));     // 8
+console.log(CalculatorModule.getPI());       // 3.14159
+CalculatorModule.setMemory(42);
+console.log(CalculatorModule.getMemory());   // 42
+
+// PI and validateNumber are not accessible from outside</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Prototypes and Inheritance
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript uses prototypal inheritance. Every object has a prototype, and objects inherit properties and methods from their prototype.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Prototype Chain:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Every object has a prototype
+const obj = {};
+console.log(obj.__proto__); // Object.prototype
+console.log(obj.__proto__.__proto__); // null
+
+// Constructor functions
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+// Adding methods to prototype
+Person.prototype.greet = function() {
+    return `Hello, my name is ${this.name}`;
+};
+
+Person.prototype.getAge = function() {
+    return this.age;
+};
+
+const john = new Person('John', 30);
+console.log(john.greet());    // "Hello, my name is John"
+console.log(john.getAge());   // 30
+
+// Check prototype
+console.log(john.__proto__ === Person.prototype); // true</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Prototypal Inheritance:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.eat = function() {
+    return `${this.name} is eating`;
+};
+
+function Dog(name, breed) {
+    Animal.call(this, name); // Call parent constructor
+    this.breed = breed;
+}
+
+// Set up inheritance
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+// Add dog-specific methods
+Dog.prototype.bark = function() {
+    return `${this.name} says woof!`;
+};
+
+const buddy = new Dog('Buddy', 'Golden Retriever');
+console.log(buddy.eat());  // "Buddy is eating" (inherited)
+console.log(buddy.bark()); // "Buddy says woof!" (own method)
+
+console.log(buddy instanceof Dog);     // true
+console.log(buddy instanceof Animal);  // true</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                ES6 Classes (Syntactic Sugar)
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                ES6 classes are syntactic sugar over JavaScript's prototypal inheritance system.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Class declaration
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Instance method
+    greet() {
+        return `Hello, my name is ${this.name}`;
+    }
+    
+    // Getter
+    get fullName() {
+        return this.name;
+    }
+    
+    // Setter
+    set fullName(name) {
+        this.name = name;
+    }
+    
+    // Static method (belongs to class, not instances)
+    static createAnonymous() {
+        return new Person('Anonymous', 0);
+    }
+}
+
+// Inheritance
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age); // Call parent constructor
+        this.jobTitle = jobTitle;
+    }
+    
+    // Override parent method
+    greet() {
+        return `${super.greet()} and I work as ${this.jobTitle}`;
+    }
+    
+    work() {
+        return `${this.name} is working`;
+    }
+}
+
+const employee = new Employee('Jane', 28, 'Developer');
+console.log(employee.greet()); // "Hello, my name is Jane and I work as Developer"
+
+const anonymous = Person.createAnonymous();
+console.log(anonymous.greet()); // "Hello, my name is Anonymous"</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                The 'this' Keyword
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The value of 'this' depends on how a function is called. Understanding 'this' is crucial for effective JavaScript programming.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Different Contexts:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// 1. Global context
+console.log(this); // Window (in browser)
+
+// 2. Function context
+function showThis() {
+    console.log(this);
+}
+showThis(); // Window (non-strict) or undefined (strict mode)
+
+// 3. Method context
+const obj = {
+    name: 'Object',
+    showThis: function() {
+        console.log(this); // obj
+    }
+};
+obj.showThis();
+
+// 4. Constructor context
+function Person(name) {
+    this.name = name;
+    console.log(this); // new Person instance
+}
+const person = new Person('John');
+
+// 5. Event handler context
+button.addEventListener('click', function() {
+    console.log(this); // The button element
+});
+
+// 6. Arrow function context
+const obj2 = {
+    name: 'Object',
+    showThis: function() {
+        const arrowFunc = () => console.log(this); // inherits from showThis
+        arrowFunc();
+    }
+};
+obj2.showThis(); // obj2</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Controlling 'this':</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const person = {
+    name: 'John',
+    greet: function() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+};
+
+// call() - calls function with specific 'this' and arguments
+person.greet.call({ name: 'Jane' }); // "Hello, I'm Jane"
+
+// apply() - similar to call but takes arguments as array
+person.greet.apply({ name: 'Bob' }); // "Hello, I'm Bob"
+
+// bind() - returns new function with bound 'this'
+const boundGreet = person.greet.bind({ name: 'Alice' });
+boundGreet(); // "Hello, I'm Alice"
+
+// Common use case: preserving 'this' in callbacks
+class Component {
+    constructor() {
+        this.value = 42;
+    }
+    
+    init() {
+        // Without bind, 'this' would be the button
+        button.addEventListener('click', this.handleClick.bind(this));
+    }
+    
+    handleClick() {
+        console.log(this.value); // 42
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Event Loop and Asynchronous JavaScript
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Understanding how JavaScript handles asynchronous operations through the event loop.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Call Stack, Web APIs, and Queues:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Synchronous code runs immediately
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout callback');
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log('Promise callback');
+});
+
+console.log('End');
+
+// Output order:
+// "Start"
+// "End"
+// "Promise callback"
+// "Timeout callback"
+
+// Why? Microtasks (Promises) run before macrotasks (setTimeout)</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Microtasks vs Macrotasks:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Microtasks</strong>: Promise callbacks, MutationObserver, process.nextTick (Node.js)</li>
+                <li><strong>Macrotasks</strong>: setTimeout, setInterval, setImmediate (Node.js), I/O operations</li>
+                <li>Microtasks are executed before the next macrotask</li>
+                <li>The event loop processes all microtasks before moving to the next macrotask</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Creating Custom Async Functions:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function example() {
+    console.log('Start');
+    
+    await delay(1000);
+    console.log('After 1 second');
+    
+    await delay(500);
+    console.log('After another 0.5 seconds');
+    
+    console.log('End');
+}
+
+// Simulating a simple task queue
+class TaskQueue {
+    constructor() {
+        this.queue = [];
+        this.running = false;
+    }
+    
+    async add(task) {
+        this.queue.push(task);
+        if (!this.running) {
+            await this.run();
+        }
+    }
+    
+    async run() {
+        this.running = true;
+        while (this.queue.length > 0) {
+            const task = this.queue.shift();
+            try {
+                await task();
+            } catch (error) {
+                console.error('Task failed:', error);
+            }
+        }
+        this.running = false;
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Memory Management and Garbage Collection
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript automatically manages memory through garbage collection, but understanding it helps write more efficient code.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Memory Leaks:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// 1. Accidental global variables
+function createGlobal() {
+    leakedVariable = 'I am global'; // No var/let/const - becomes global
+}
+
+// 2. Forgotten timers/intervals
+function startTimer() {
+    const interval = setInterval(() => {
+        console.log('Running...');
+    }, 1000);
+    
+    // Forgot to clear interval - memory leak!
+    // Should call: clearInterval(interval);
+}
+
+// 3. Closures holding references
+function createLeak() {
+    const largeObject = { data: new Array(1000000) };
+    
+    return function() {
+        console.log(largeObject.data.length);
+    };
+}
+
+// 4. DOM references
+function addHandler() {
+    const element = document.getElementById('myElement');
+    element.addEventListener('click', function() {
+        console.log('Clicked');
+        // Even if element is removed from DOM, this function holds reference
+        // to element, preventing garbage collection
+    });
+}</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Preventing Memory Leaks:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// 1. Clean up event listeners
+function setupHandler() {
+    const element = document.getElementById('button');
+    const handler = () => console.log('clicked');
+    
+    element.addEventListener('click', handler);
+    
+    // Return cleanup function
+    return () => {
+        element.removeEventListener('click', handler);
+    };
+}
+
+const cleanup = setupHandler();
+// Later: cleanup();
+
+// 2. Use WeakMap for object keys
+const cache = new WeakMap();
+
+function getCachedData(obj) {
+    if (cache.has(obj)) {
+        return cache.get(obj);
+    }
+    
+    const data = expensiveComputation(obj);
+    cache.set(obj, data);
+    return data;
+}
+
+// When obj is garbage collected, cache entry is automatically removed
+
+// 3. Avoid circular references
+// Bad
+function Circular() {
+    this.data = { value: 42 };
+    this.data.parent = this; // Circular reference
+}
+
+// Good
+function NonCircular() {
+    this.data = { value: 42 };
+    // No circular reference
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Design Patterns in JavaScript
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Common design patterns that help solve recurring problems in JavaScript applications.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Singleton Pattern:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class Database {
+    constructor() {
+        if (Database.instance) {
+            return Database.instance;
+        }
+        
+        this.data = {};
+        Database.instance = this;
+    }
+    
+    set(key, value) {
+        this.data[key] = value;
+    }
+    
+    get(key) {
+        return this.data[key];
+    }
+}
+
+// Usage
+const db1 = new Database();
+const db2 = new Database();
+
+db1.set('user', 'John');
+console.log(db2.get('user')); // 'John' - same instance
+
+console.log(db1 === db2); // true</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Observer Pattern:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class EventEmitter {
+    constructor() {
+        this.events = {};
+    }
+    
+    on(event, callback) {
+        if (!this.events[event]) {
+            this.events[event] = [];
+        }
+        this.events[event].push(callback);
+    }
+    
+    off(event, callback) {
+        if (!this.events[event]) return;
+        this.events[event] = this.events[event].filter(cb => cb !== callback);
+    }
+    
+    emit(event, ...args) {
+        if (!this.events[event]) return;
+        this.events[event].forEach(callback => callback(...args));
+    }
+}
+
+// Usage
+const emitter = new EventEmitter();
+
+function userLoggedIn(user) {
+    console.log(`${user} logged in`);
+}
+
+emitter.on('login', userLoggedIn);
+emitter.emit('login', 'John'); // "John logged in"
+
+emitter.off('login', userLoggedIn);
+emitter.emit('login', 'Jane'); // Nothing happens</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Factory Pattern:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class Car {
+    constructor(make, model) {
+        this.make = make;
+        this.model = model;
+    }
+    
+    drive() {
+        return `${this.make} ${this.model} is driving`;
+    }
+}
+
+class Truck {
+    constructor(make, model) {
+        this.make = make;
+        this.model = model;
+    }
+    
+    haul() {
+        return `${this.make} ${this.model} is hauling`;
+    }
+}
+
+class VehicleFactory {
+    static createVehicle(type, make, model) {
+        switch (type) {
+            case 'car':
+                return new Car(make, model);
+            case 'truck':
+                return new Truck(make, model);
+            default:
+                throw new Error(`Unknown vehicle type: ${type}`);
+        }
+    }
+}
+
+// Usage
+const car = VehicleFactory.createVehicle('car', 'Toyota', 'Camry');
+const truck = VehicleFactory.createVehicle('truck', 'Ford', 'F-150');
+
+console.log(car.drive());   // "Toyota Camry is driving"
+console.log(truck.haul());  // "Ford F-150 is hauling"</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Performance Optimization
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Techniques to improve JavaScript performance and user experience.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Debouncing and Throttling:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Debounce: delays execution until after delay has passed
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Throttle: ensures function executes at most once per interval
+function throttle(func, interval) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = Date.now();
+        if (now - lastCall >= interval) {
+            lastCall = now;
+            func.apply(this, args);
+        }
+    };
+}
+
+// Usage
+const debouncedSearch = debounce(searchAPI, 300);
+const throttledScroll = throttle(handleScroll, 100);
+
+input.addEventListener('input', debouncedSearch);
+window.addEventListener('scroll', throttledScroll);</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Memoization:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function memoize(func) {
+    const cache = new Map();
+    
+    return function(...args) {
+        const key = JSON.stringify(args);
+        
+        if (cache.has(key)) {
+            return cache.get(key);
+        }
+        
+        const result = func.apply(this, args);
+        cache.set(key, result);
+        return result;
+    };
+}
+
+// Expensive function
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const memoizedFib = memoize(fibonacci);
+
+console.time('First call');
+console.log(memoizedFib(40)); // Takes time
+console.timeEnd('First call');
+
+console.time('Second call');
+console.log(memoizedFib(40)); // Instant (cached)
+console.timeEnd('Second call');</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Virtual Scrolling:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class VirtualList {
+    constructor(container, items, itemHeight) {
+        this.container = container;
+        this.items = items;
+        this.itemHeight = itemHeight;
+        this.visibleItems = 10; // How many items to show at once
+        
+        this.scrollTop = 0;
+        this.container.addEventListener('scroll', this.onScroll.bind(this));
+        this.render();
+    }
+    
+    onScroll() {
+        this.scrollTop = this.container.scrollTop;
+        this.render();
+    }
+    
+    render() {
+        const startIndex = Math.floor(this.scrollTop / this.itemHeight);
+        const endIndex = Math.min(
+            startIndex + this.visibleItems,
+            this.items.length
+        );
+        
+        const visibleItems = this.items.slice(startIndex, endIndex);
+        
+        // Position the container to create illusion of full list
+        const totalHeight = this.items.length * this.itemHeight;
+        const offsetY = startIndex * this.itemHeight;
+        
+        this.container.innerHTML = visibleItems
+            .map(item => `&lt;div style="height: ${this.itemHeight}px"&gt;${item}&lt;/div&gt;`)
+            .join('');
+            
+        this.container.style.transform = `translateY(${offsetY}px)`;
+        this.container.style.height = `${totalHeight}px`;
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Modern JavaScript Ecosystem
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Overview of the current JavaScript ecosystem and tools.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Build Tools:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Webpack</strong>: Module bundler with extensive plugin ecosystem</li>
+                <li><strong>Vite</strong>: Fast build tool with native ES modules support</li>
+                <li><strong>Parcel</strong>: Zero-configuration bundler</li>
+                <li><strong>Rollup</strong>: Optimized for libraries and smaller bundles</li>
+                <li><strong>esbuild</strong>: Extremely fast bundler written in Go</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Testing Frameworks:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Jest</strong>: Popular testing framework with built-in mocking</li>
+                <li><strong>Vitest</strong>: Fast testing framework built on Vite</li>
+                <li><strong>Mocha</strong>: Flexible testing framework</li>
+                <li><strong>Cypress</strong>: End-to-end testing for web applications</li>
+                <li><strong>Playwright</strong>: Cross-browser automation for testing</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Package Managers:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>npm</strong>: Default package manager for Node.js</li>
+                <li><strong>yarn</strong>: Fast, reliable, and secure package manager</li>
+                <li><strong>pnpm</strong>: Efficient package manager with disk space optimization</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Code Quality:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>ESLint</strong>: Linting tool for identifying problematic patterns</li>
+                <li><strong>Prettier</strong>: Code formatter for consistent styling</li>
+                <li><strong>TypeScript</strong>: Typed superset of JavaScript</li>
+                <li><strong>Husky</strong>: Git hooks for running scripts before commits</li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>

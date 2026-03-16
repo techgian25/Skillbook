@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15: CSS Project - Portfolio Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 15: CSS Project - Portfolio Website
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Project Overview
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Build your own portfolio website combining all CSS concepts:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Sections:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Responsive header with navigation</li>
+                <li>Hero section with call-to-action</li>
+                <li>Portfolio/Projects showcase</li>
+                <li>About section</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Project Requirements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Must-have features:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Requirements:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Semantic HTML structure</li>
+                <li>Custom CSS styling</li>
+                <li>Responsive design (mobile-first)</li>
+                <li>Smooth transitions and hover effects</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Layout Sections
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Page structure:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Sections to Include:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;header&gt; - Navigation menu</li>
+                <li>&lt;section hero&gt; - Welcome section</li>
+                <li>&lt;section portfolio&gt; - Project cards</li>
+                <li>&lt;section about&gt; - About you</li>
+                <li>&lt;footer&gt; - Contact info</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Styling Features
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Apply CSS concepts:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Use:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Flexbox for navigation</li>
+                <li>Grid for portfolio cards</li>
+                <li>Gradient backgrounds</li>
+                <li>Hover animations</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Apply all CSS concepts learned</li>
+                <li>Create professional-looking website</li>
+                <li>Practice responsive design</li>
+                <li>Build portfolio piece</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: CSS Project – Portfolio
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Which tag links CSS file?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) &lt;link&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) &lt;style&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) &lt;css&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) &lt;import&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Portfolio's navigation often built with?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) nav element</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) footer element</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) header</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) section</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Which CSS layout is good for galleries?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) grid</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) table</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) flexbox</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) float</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. To make images responsive use?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) max-width:100%</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) width:fixed</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) height:auto</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) display:block</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. A portfolio page should include?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) About, Projects, Contact</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) Only Projects</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) Only Contact</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) Blog</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+<script>
+function checkQuiz(){
+    const answers={q1:'a',q2:'a',q3:'a',q4:'a',q5:'a'};
+    const explanations={
+        q1:'<link> tag includes CSS.',
+        q2:'<nav> is used for navigation.',
+        q3:'Grid layout suits galleries.',
+        q4:'max-width:100% makes images responsive.',
+        q5:'Portfolio includes About, Projects, Contact.'
+    };
+    let score=0;
+    const results=[];
+    for(let i=1;i<=5;i++){
+        const sel=document.querySelector(`input[name="q${i}"]:checked`);
+        const correct=answers[`q${i}`];
+        if(sel&&sel.value===correct){
+            score++;
+            results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
+        } else {
+            results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+        }
+    }
+    document.getElementById('score').textContent=`You got ${score} out of 5 correct!`;
+    document.getElementById('answers').innerHTML=results.join('');
+    document.getElementById('quiz-results').classList.remove('hidden');
+}
+function resetQuiz(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.getElementById('quiz-results').classList.add('hidden');}
+</script>
+</body>
+
+</html>

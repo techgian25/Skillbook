@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: DOM Manipulation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 6: DOM Manipulation
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is the DOM?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page as a tree of objects that you can manipulate with JavaScript.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">DOM Tree Structure:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><code>document</code> - The root of the DOM tree</li>
+                <li><code>html</code> - The HTML element</li>
+                <li><code>head</code> and <code>body</code> - Child elements of html</li>
+                <li>All other HTML elements form the tree structure</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Selecting Elements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                There are several methods to select DOM elements:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">getElementById:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const element = document.getElementById('myId');</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">getElementsByClassName:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const elements = document.getElementsByClassName('myClass');
+// Returns HTMLCollection</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">getElementsByTagName:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const paragraphs = document.getElementsByTagName('p');
+// Returns HTMLCollection</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">querySelector:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const element = document.querySelector('#myId');
+const element = document.querySelector('.myClass');
+const element = document.querySelector('div > p');</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">querySelectorAll:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const elements = document.querySelectorAll('.myClass');
+// Returns NodeList</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Changing Content
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can change the content and attributes of DOM elements:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">innerHTML:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const div = document.querySelector('#myDiv');
+div.innerHTML = '<p>New content with <strong>HTML</strong></p>';</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">textContent:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const div = document.querySelector('#myDiv');
+div.textContent = 'New text content (HTML tags are escaped)';</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Changing Attributes:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const img = document.querySelector('img');
+img.src = 'new-image.jpg';
+img.alt = 'New alt text';
+
+// Or using setAttribute
+img.setAttribute('src', 'new-image.jpg');
+img.setAttribute('alt', 'New alt text');</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Changing Styles
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can modify CSS styles using the style property:
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const element = document.querySelector('#myElement');
+
+// Single style property
+element.style.color = 'red';
+element.style.fontSize = '20px';
+element.style.backgroundColor = 'yellow';
+
+// Multiple styles
+element.style.cssText = 'color: red; font-size: 20px; background: yellow;';
+
+// Adding/removing classes
+element.classList.add('highlight');
+element.classList.remove('oldClass');
+element.classList.toggle('active');</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Creating and Adding Elements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can create new elements and add them to the DOM:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Creating Elements:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Create a new element
+const newDiv = document.createElement('div');
+newDiv.textContent = 'Hello World!';
+newDiv.className = 'my-class';
+
+// Create a text node
+const textNode = document.createTextNode('Some text');
+
+// Create an element with attributes
+const newImg = document.createElement('img');
+newImg.src = 'image.jpg';
+newImg.alt = 'An image';</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Adding Elements to DOM:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const parent = document.querySelector('#parent');
+const newElement = document.createElement('p');
+newElement.textContent = 'New paragraph';
+
+// Append as last child
+parent.appendChild(newElement);
+
+// Insert before another element
+const reference = document.querySelector('#reference');
+parent.insertBefore(newElement, reference);
+
+// Using modern methods
+parent.append(newElement); // Can append multiple
+parent.prepend(newElement); // Add as first child</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Removing Elements
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can remove elements from the DOM:
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const element = document.querySelector('#toRemove');
+
+// Remove child from parent
+const parent = element.parentNode;
+parent.removeChild(element);
+
+// Modern way - remove directly
+element.remove();
+
+// Remove all children
+const container = document.querySelector('#container');
+while (container.firstChild) {
+    container.removeChild(container.firstChild);
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Traversing the DOM
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can navigate through the DOM tree:
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const element = document.querySelector('#myElement');
+
+// Parent
+const parent = element.parentNode;
+const parentElement = element.parentElement;
+
+// Children
+const firstChild = element.firstChild;
+const lastChild = element.lastChild;
+const allChildren = element.children; // Only element children
+
+// Siblings
+const nextSibling = element.nextSibling;
+const nextElementSibling = element.nextElementSibling;
+const prevSibling = element.previousSibling;
+const prevElementSibling = element.previousElementSibling;</code></pre>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: DOM Manipulation
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Which method selects a single element by ID?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) document.getElementById()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) document.querySelector()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) document.getElementsByClassName()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) document.getElementsByTagName()</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. What does querySelector() return?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) An array of elements</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) The first matching element</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) All matching elements</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) A NodeList</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. How do you change the text content of an element?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) element.text = "new text"</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) element.textContent = "new text"</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) element.innerText = "new text"</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) Both b and c are correct</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Which method adds an element to the DOM?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) element.create()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) parent.appendChild(element)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) element.addToDOM()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) document.insertElement(element)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. What does element.children return?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) All child nodes including text and comments</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) Only element children (HTML tags)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) All descendants of the element</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) Only the first child element</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'd',
+                q4: 'b',
+                q5: 'b'
+            };
+
+            const explanations = {
+                q1: 'getElementById() is the most efficient method to select a single element by its ID attribute.',
+                q2: 'querySelector() returns the first element that matches the specified CSS selector.',
+                q3: 'Both textContent and innerText can be used to change the text content of an element, though they handle whitespace differently.',
+                q4: 'appendChild() adds a node to the end of the list of children of a specified parent node.',
+                q5: 'element.children returns an HTMLCollection of only the element children (HTML tags), excluding text nodes and comments.'
+            };
+
+            let score = 0;
+            const results = [];
+
+            Object.keys(answers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                const correct = answers[question];
+
+                if (selected && selected.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`);
+                }
+            });
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

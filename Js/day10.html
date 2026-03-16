@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10: Error Handling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 10: Error Handling
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Errors?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Errors are problems that occur during the execution of a program. Proper error handling prevents crashes and provides better user experience.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Types of Errors:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><code>SyntaxError</code> - Invalid JavaScript syntax</li>
+                <li><code>ReferenceError</code> - Reference to non-existent variable</li>
+                <li><code>TypeError</code> - Operation on wrong type</li>
+                <li><code>RangeError</code> - Number outside valid range</li>
+                <li><code>URIError</code> - Invalid URI operations</li>
+                <li><code>EvalError</code> - Error in eval() function</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Try-Catch Blocks
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                The try-catch statement marks a block of statements to try, and specifies a response should an exception be thrown.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>try {
+    // Code that might throw an error
+    const result = riskyOperation();
+    console.log('Success:', result);
+} catch (error) {
+    // Code to handle the error
+    console.log('Error occurred:', error.message);
+    // Handle the error appropriately
+} finally {
+    // Code that always executes
+    console.log('Cleanup code here');
+}</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Error Object Properties:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>try {
+    throw new Error('Something went wrong');
+} catch (error) {
+    console.log('Name:', error.name);        // 'Error'
+    console.log('Message:', error.message);  // 'Something went wrong'
+    console.log('Stack:', error.stack);      // Stack trace
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Throwing Errors
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can throw your own errors using the throw statement.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function divide(a, b) {
+    if (b === 0) {
+        throw new Error('Division by zero is not allowed');
+    }
+    return a / b;
+}
+
+try {
+    const result = divide(10, 0);
+} catch (error) {
+    console.log('Caught error:', error.message);
+}
+
+// Throwing different types of errors
+function validateAge(age) {
+    if (typeof age !== 'number') {
+        throw new TypeError('Age must be a number');
+    }
+    if (age < 0) {
+        throw new RangeError('Age cannot be negative');
+    }
+    if (age > 150) {
+        throw new RangeError('Age seems unrealistic');
+    }
+    return true;
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Custom Error Classes
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can create custom error classes that extend the built-in Error class.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>class ValidationError extends Error {
+    constructor(message, field) {
+        super(message);
+        this.name = 'ValidationError';
+        this.field = field;
+    }
+}
+
+class NetworkError extends Error {
+    constructor(message, statusCode) {
+        super(message);
+        this.name = 'NetworkError';
+        this.statusCode = statusCode;
+    }
+}
+
+// Usage
+function validateUser(user) {
+    if (!user.name) {
+        throw new ValidationError('Name is required', 'name');
+    }
+    if (!user.email) {
+        throw new ValidationError('Email is required', 'email');
+    }
+}
+
+try {
+    validateUser({ name: 'John' });
+} catch (error) {
+    if (error instanceof ValidationError) {
+        console.log(`Validation failed for ${error.field}: ${error.message}`);
+    } else {
+        console.log('Unexpected error:', error.message);
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Error Handling in Promises
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Promises have built-in error handling with .catch() and try-catch in async functions.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Promise Error Handling:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        // Simulate API call
+        setTimeout(() => {
+            const success = Math.random() > 0.5;
+            if (success) {
+                resolve({ data: 'Success!' });
+            } else {
+                reject(new Error('API call failed'));
+            }
+        }, 1000);
+    });
+};
+
+// Using .catch()
+fetchData()
+    .then(result => {
+        console.log('Data:', result.data);
+    })
+    .catch(error => {
+        console.log('Error:', error.message);
+        // Handle error (retry, show message, etc.)
+    });
+
+// Chaining errors
+fetchData()
+    .then(processData)
+    .then(saveData)
+    .catch(error => {
+        console.log('Something failed in the chain:', error.message);
+    });</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Async/Await Error Handling:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>async function fetchUserData() {
+    try {
+        const response = await fetch('/api/user');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const userData = await response.json();
+        return userData;
+    } catch (error) {
+        console.log('Failed to fetch user data:', error.message);
+        // Could throw a custom error or return a default value
+        throw new Error('Unable to load user data');
+    }
+}
+
+// Using the function
+async function displayUser() {
+    try {
+        const user = await fetchUserData();
+        console.log('User:', user);
+    } catch (error) {
+        console.log('Could not display user:', error.message);
+        // Show error message to user
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Global Error Handling
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can set up global error handlers to catch unhandled errors and promise rejections.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Window Error Events:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Global error handler for runtime errors
+window.addEventListener('error', function(event) {
+    console.log('Global error caught:', event.error);
+    // Send error to logging service
+    logErrorToService(event.error);
+    
+    // Prevent default error handling
+    event.preventDefault();
+});
+
+// Global handler for unhandled promise rejections
+window.addEventListener('unhandledrejection', function(event) {
+    console.log('Unhandled promise rejection:', event.reason);
+    // Handle the rejection
+    event.preventDefault();
+});</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Error Logging:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>function logError(error, context = {}) {
+    const errorData = {
+        message: error.message,
+        stack: error.stack,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        url: window.location.href,
+        ...context
+    };
+    
+    // Send to error logging service
+    console.log('Logging error:', errorData);
+    
+    // In a real app, you might send this to:
+    // - Sentry, LogRocket, Bugsnag, etc.
+    // - Your own logging API
+}
+
+// Usage
+try {
+    riskyOperation();
+} catch (error) {
+    logError(error, { userId: '123', action: 'saveData' });
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Best Practices
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Guidelines for effective error handling in JavaScript applications.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">General Best Practices:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Always use try-catch for synchronous operations that might fail</li>
+                <li>Handle promise rejections with .catch() or try-catch in async functions</li>
+                <li>Provide meaningful error messages</li>
+                <li>Don't expose sensitive information in error messages</li>
+                <li>Use custom error classes for different types of errors</li>
+                <li>Log errors for debugging but don't show stack traces to users</li>
+                <li>Fail fast - don't continue execution after critical errors</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Error Recovery Patterns:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Retry pattern
+async function fetchWithRetry(url, maxRetries = 3) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            const response = await fetch(url);
+            return await response.json();
+        } catch (error) {
+            if (i === maxRetries - 1) throw error;
+            console.log(`Attempt ${i + 1} failed, retrying...`);
+            await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+        }
+    }
+}
+
+// Fallback pattern
+function getUserData() {
+    try {
+        return JSON.parse(localStorage.getItem('userData'));
+    } catch (error) {
+        console.log('Could not parse user data, using defaults');
+        return { name: 'Guest', preferences: {} };
+    }
+}
+
+// Graceful degradation
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => {
+            console.log('Image failed to load, using placeholder');
+            resolve(createPlaceholderImage());
+        };
+        img.src = src;
+    });
+}</code></pre>
+        </details>
+    </div>
+</body>
+</html>

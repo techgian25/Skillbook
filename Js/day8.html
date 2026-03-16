@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8: Asynchronous JavaScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 8: Asynchronous JavaScript
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Synchronous vs Asynchronous
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript is single-threaded, meaning it can only execute one task at a time. Asynchronous programming allows non-blocking operations.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Synchronous (Blocking):</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>console.log('Start');
+console.log('Middle'); // Waits for previous line
+console.log('End');
+// Output: Start, Middle, End</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Asynchronous (Non-blocking):</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>console.log('Start');
+setTimeout(() => console.log('Async operation'), 1000);
+console.log('End');
+// Output: Start, End, Async operation (after 1 second)</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Callbacks
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Callbacks are functions passed as arguments to other functions, executed when an asynchronous operation completes.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Basic callback
+function doSomething(callback) {
+    setTimeout(() => {
+        console.log('Operation completed');
+        callback();
+    }, 1000);
+}
+
+doSomething(() => {
+    console.log('Callback executed');
+});
+
+// Callback with data
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = { name: 'John', age: 30 };
+        callback(data);
+    }, 1000);
+}
+
+fetchData((data) => {
+    console.log('Received data:', data);
+});</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Callback Hell:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Nested callbacks become hard to read
+firstAsyncOperation((result1) => {
+    secondAsyncOperation(result1, (result2) => {
+        thirdAsyncOperation(result2, (result3) => {
+            console.log('Final result:', result3);
+        });
+    });
+});</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Promises
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Creating Promises:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const myPromise = new Promise((resolve, reject) => {
+    // Asynchronous operation
+    setTimeout(() => {
+        const success = true;
+        if (success) {
+            resolve('Operation successful!');
+        } else {
+            reject('Operation failed!');
+        }
+    }, 1000);
+});</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Using Promises:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>myPromise
+    .then((result) => {
+        console.log('Success:', result);
+        return 'Next step';
+    })
+    .then((nextResult) => {
+        console.log('Next:', nextResult);
+    })
+    .catch((error) => {
+        console.log('Error:', error);
+    })
+    .finally(() => {
+        console.log('Always executes');
+    });</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Async/Await
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Async/await is syntactic sugar built on top of promises, making asynchronous code look synchronous.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Async Functions:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>async function myAsyncFunction() {
+    try {
+        const result1 = await someAsyncOperation();
+        const result2 = await anotherAsyncOperation(result1);
+        console.log('Final result:', result2);
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+// Arrow function version
+const myAsyncFunction = async () => {
+    // async code here
+};</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Await Operator:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Await pauses execution until promise resolves
+async function fetchUserData() {
+    console.log('Fetching user data...');
+    
+    const response = await fetch('/api/user');
+    const userData = await response.json();
+    
+    console.log('User data:', userData);
+    return userData;
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Promise Methods
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Static methods for working with multiple promises.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Promise.all:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Waits for all promises to resolve
+const promises = [
+    fetch('/api/users'),
+    fetch('/api/posts'),
+    fetch('/api/comments')
+];
+
+Promise.all(promises)
+    .then((results) => {
+        console.log('All results:', results);
+    })
+    .catch((error) => {
+        console.log('One promise failed:', error);
+    });</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Promise.race:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Resolves/rejects as soon as first promise settles
+const promise1 = new Promise(resolve => setTimeout(() => resolve('First'), 1000));
+const promise2 = new Promise(resolve => setTimeout(() => resolve('Second'), 2000));
+
+Promise.race([promise1, promise2])
+    .then(result => console.log(result)); // "First"</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Promise.allSettled:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Waits for all promises to settle (resolve or reject)
+Promise.allSettled([promise1, promise2])
+    .then(results => {
+        results.forEach(result => {
+            if (result.status === 'fulfilled') {
+                console.log('Fulfilled:', result.value);
+            } else {
+                console.log('Rejected:', result.reason);
+            }
+        });
+    });</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Error Handling in Async Code
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Proper error handling is crucial in asynchronous operations.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">With Promises:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>fetch('/api/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Data:', data);
+    })
+    .catch(error => {
+        console.log('Error:', error.message);
+    });</code></pre>
+            <h3 class="text-sm font-semibold mt-6 mb-2">With Async/Await:</h3>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>async function fetchData() {
+    try {
+        const response = await fetch('/api/data');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Data:', data);
+    } catch (error) {
+        console.log('Error:', error.message);
+        // Handle error appropriately
+    }
+}</code></pre>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Converting Callbacks to Promises
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                You can wrap callback-based functions in promises.
+            </p>
+            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>// Callback-based function
+function oldApiFunction(callback) {
+    setTimeout(() => {
+        callback(null, 'Success!');
+    }, 1000);
+}
+
+// Wrap in promise
+function promisifiedApi() {
+    return new Promise((resolve, reject) => {
+        oldApiFunction((error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+}
+
+// Use with async/await
+async function useApi() {
+    try {
+        const result = await promisifiedApi();
+        console.log(result);
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}</code></pre>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Asynchronous JavaScript
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What does a Promise represent?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) A completed operation</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) A value that may be available now, later, or never</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) A synchronous operation</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) An error that occurred</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. What are the three states of a Promise?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) Pending, Resolved, Rejected</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) Loading, Success, Error</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) Waiting, Done, Failed</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) Start, Middle, End</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. What does the await keyword do?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) Makes code run faster</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) Pauses execution until a Promise resolves</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) Creates a new Promise</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) Handles errors automatically</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Which method handles Promise rejection?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) .then()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) .catch()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) .finally()</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) .error()</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. What does Promise.all() do?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) Runs Promises one after another</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) Waits for all Promises to resolve</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) Returns the first resolved Promise</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) Cancels all Promises</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            };
+
+            const explanations = {
+                q1: 'A Promise represents a value that may be available now, in the future, or never. It\'s a placeholder for an asynchronous operation.',
+                q2: 'Promises have three states: pending (initial), fulfilled (resolved), and rejected.',
+                q3: 'The await keyword pauses the execution of an async function until the Promise is resolved or rejected.',
+                q4: 'The .catch() method is used to handle Promise rejections and errors.',
+                q5: 'Promise.all() takes an array of Promises and returns a single Promise that resolves when all input Promises have resolved.'
+            };
+
+            let score = 0;
+            const results = [];
+
+            Object.keys(answers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                const correct = answers[question];
+
+                if (selected && selected.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`);
+                }
+            });
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

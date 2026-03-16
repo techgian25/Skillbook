@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 - Tailwind Configuration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 8: Customizing with config (Tailwind)</h1>
+        
+        <!-- Section 1 -->
+        <div class="mb-6 border-l-4 border-blue-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">tailwind.config.js</h2>
+                <span class="text-2xl text-blue-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700">The config file is where you customize Tailwind CSS. It controls colors, spacing, fonts, and more. You can extend the default theme or override it completely.</p>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="mb-6 border-l-4 border-green-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Customizing Theme</h2>
+                <span class="text-2xl text-green-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Colors - Define your brand palette</li>
+                    <li>Typography - Set font families and sizes</li>
+                    <li>Spacing - Customize the spacing scale</li>
+                    <li>Breakpoints - Define custom responsive breakpoints</li>
+                    <li>Shadows - Create custom shadow values</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="mb-6 border-l-4 border-purple-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Extending vs Overriding</h2>
+                <span class="text-2xl text-purple-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3"><strong>Extend:</strong> Add custom colors while keeping defaults</p>
+                <p class="text-gray-700"><strong>Override:</strong> Replace the entire theme section (loses all defaults)</p>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="mb-6 border-l-4 border-orange-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-orange-50 hover:bg-orange-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Config Example</h2>
+                <span class="text-2xl text-orange-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <p class="text-gray-700 mb-3">Sample configuration:</p>
+                <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
+                    <code class="text-sm">module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'brand-blue': '#0066cc'
+      }
+    }
+  }
+}</code>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="mb-6 border-l-4 border-red-500">
+            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 transition cursor-pointer rounded">
+                <h2 class="text-2xl font-semibold text-left">Benefits of Customization</h2>
+                <span class="text-2xl text-red-600">▼</span>
+            </button>
+            <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Match your brand identity</li>
+                    <li>Maintain consistency across projects</li>
+                    <li>Reduce custom CSS code</li>
+                    <li>Improve team collaboration with shared configs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('span');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                chevron.textContent = '▶';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

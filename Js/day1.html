@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Introduction to JavaScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 1: Introduction to JavaScript
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is JavaScript?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript is a programming language used to build interactive web
+                applications and dynamic websites.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">With JavaScript:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Buttons work</li>
+                <li>Forms validate</li>
+                <li>Data loads dynamically</li>
+                <li>Animations run</li>
+            </ul>
+            <h3 class="text-sm font-semibold mt-6 mb-2">Example Interactions:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Form validation</li>
+                <li>Dropdown menus</li>
+                <li>Sliders</li>
+                <li>API data loading</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Where JavaScript Runs
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                JavaScript mainly runs in:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Browser</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Chrome</li>
+                <li>Edge</li>
+                <li>Safari</li>
+                <li>Firefox</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                How to Add JavaScript to HTML
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                There are 3 ways.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Browser</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Method 1 - Inline JavaScript (Not recommended)</li>
+                <li>Method 2 - Internal JavaScript</li>
+                <li>Method 3 - External JavaScript (Best Practice)</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                JavaScript Console
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                console.log("Hello JavaScript");
+            </p>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>What JavaScript is</li>
+                <li>Where JavaScript runs</li>
+                <li>How to add JS to HTML</li>
+                <li>How to use console</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What is JavaScript primarily used for?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) Creating static web pages</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) Building interactive web applications</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) Designing website layouts</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) Managing databases</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Which of the following is NOT a place where JavaScript runs?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) Web browsers</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) Server-side with Node.js</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) Mobile applications</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) Desktop applications</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Which HTML tag is used to include external JavaScript files?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) &lt;js&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) &lt;script&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) &lt;javascript&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) &lt;code&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. What will be logged to the console when you run: console.log("Hello, World!");</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) Nothing, it's a comment</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) "Hello, World!" appears in the console</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) An alert box shows "Hello, World!"</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) The page title changes to "Hello, World!"</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. Which of the following is a correct way to add JavaScript directly in HTML?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) &lt;script src="script.js"&gt;console.log("Hello");&lt;/script&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) &lt;script&gt;console.log("Hello");&lt;/script&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) &lt;javascript&gt;console.log("Hello");&lt;/javascript&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) &lt;js&gt;console.log("Hello");&lt;/js&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            };
+
+            const explanations = {
+                q1: 'JavaScript is primarily used for building interactive web applications, making web pages dynamic and responsive.',
+                q2: 'JavaScript runs in web browsers, on servers with Node.js, and in various other environments, but not natively in mobile applications.',
+                q3: 'The &lt;script&gt; tag is used to include external JavaScript files using the src attribute.',
+                q4: 'console.log() outputs messages to the browser\'s developer console, which is useful for debugging.',
+                q5: 'JavaScript code can be added directly between &lt;script&gt; and &lt;/script&gt; tags in HTML.'
+            };
+
+            let score = 0;
+            const results = [];
+
+            Object.keys(answers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                const correct = answers[question];
+
+                if (selected && selected.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`);
+                }
+            });
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            // Reset all radio buttons
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+
+            // Hide results
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

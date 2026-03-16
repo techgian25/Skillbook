@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: HTML Basics & Structure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Back Button -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 1: HTML Basics & Structure
+        </h1>
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is HTML?
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure and content of websites.
+            </p>
+            <h3 class="text-sm font-semibold mb-2">HTML is used for:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Creating page structure</li>
+                <li>Organizing content</li>
+                <li>Adding text, images, and links</li>
+                <li>Creating forms</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                HTML Document Structure
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Every HTML document has a standard structure:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Key Elements:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares document type</li>
+                <li><strong>&lt;html&gt;</strong> - Root element</li>
+                <li><strong>&lt;head&gt;</strong> - Contains metadata</li>
+                <li><strong>&lt;body&gt;</strong> - Contains visible content</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Basic HTML Tags
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Here are the most common HTML tags:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Content Tags:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>&lt;h1&gt; to &lt;h6&gt; for headings</li>
+                <li>&lt;p&gt; for paragraphs</li>
+                <li>&lt;a&gt; for links</li>
+                <li>&lt;img&gt; for images</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                HTML Attributes
+            </summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Attributes provide additional information about HTML elements:
+            </p>
+            <h3 class="text-sm font-semibold mb-2">Common Attributes:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>class - For CSS styling</li>
+                <li>id - Unique identifier</li>
+                <li>href - URL for links</li>
+                <li>src - Source for images</li>
+                <li>alt - Alternative text</li>
+            </ul>
+        </details>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Learning Outcomes
+            </summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand HTML basics</li>
+                <li>Know document structure</li>
+                <li>Use common HTML tags</li>
+                <li>Apply HTML attributes</li>
+            </ul>
+        </details>
+
+        <!-- Quiz Section -->
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+            <div class="mt-4 space-y-6">
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What does HTML stand for?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="a" class="mr-2">
+                            <span>a) Hyper Text Markup Language</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="b" class="mr-2">
+                            <span>b) Home Tool Markup Language</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="c" class="mr-2">
+                            <span>c) Hyperlinks and Text Markup Language</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" value="d" class="mr-2">
+                            <span>d) High Tech Modern Language</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Which tag is used to define the main heading?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="a" class="mr-2">
+                            <span>a) &lt;heading&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="b" class="mr-2">
+                            <span>b) &lt;h1&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="c" class="mr-2">
+                            <span>c) &lt;header&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" value="d" class="mr-2">
+                            <span>d) &lt;head&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. What is the correct syntax for a paragraph?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="a" class="mr-2">
+                            <span>a) &lt;p&gt;Text&lt;/p&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="b" class="mr-2">
+                            <span>b) &lt;paragraph&gt;Text&lt;/paragraph&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="c" class="mr-2">
+                            <span>c) &lt;para&gt;Text&lt;/para&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" value="d" class="mr-2">
+                            <span>d) &lt;text&gt;Text&lt;/text&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. What does the &lt;head&gt; tag contain?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="a" class="mr-2">
+                            <span>a) Page content visible to users</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="b" class="mr-2">
+                            <span>b) Metadata and page information</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="c" class="mr-2">
+                            <span>c) Page headers only</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" value="d" class="mr-2">
+                            <span>d) All images and links</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. What is a valid HTML document structure?</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="a" class="mr-2">
+                            <span>a) &lt;html&gt;&lt;head&gt;&lt;body&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="b" class="mr-2">
+                            <span>b) &lt;DOCTYPE&gt;&lt;html&gt;&lt;head&gt;&lt;body&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="c" class="mr-2">
+                            <span>c) &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;body&gt;</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" value="d" class="mr-2">
+                            <span>d) &lt;head&gt;&lt;body&gt;&lt;footer&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Answers
+                    </button>
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+                    <div id="answers" class="space-y-2"></div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'b',
+                q5: 'c'
+            };
+
+            const explanations = {
+                q1: 'HTML stands for HyperText Markup Language.',
+                q2: 'The &lt;h1&gt; tag is the main heading tag.',
+                q3: 'The &lt;p&gt; tag is used for paragraphs.',
+                q4: 'The &lt;head&gt; tag contains metadata and page information.',
+                q5: 'A proper HTML document starts with &lt;!DOCTYPE html&gt; declaration.'
+            };
+
+            let score = 0;
+            const results = [];
+
+            Object.keys(answers).forEach(question => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                const correct = answers[question];
+
+                if (selected && selected.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`);
+                }
+            });
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 - Tailwind Utility Classes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 4: Utility classes overview (Tailwind)</h1>
+        
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">What are Utility Classes?</summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Utility classes are small, single-purpose CSS classes that do one thing well. Instead of creating custom classes like 'btn-primary', you compose classes to build your design directly in HTML.
+            </p>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Common Utility Classes</summary>
+            <p class="mt-3 mb-5 text-gray-700">Tailwind provides utilities for every CSS property:</p>
+            <h3 class="text-sm font-semibold mb-2">Utility Categories:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Spacing:</strong> p-4 (padding), m-2 (margin), gap-3 (gap)</li>
+                <li><strong>Colors:</strong> bg-blue-500 (background), text-red-600 (text)</li>
+                <li><strong>Typography:</strong> text-lg, font-bold, font-semibold</li>
+                <li><strong>Display:</strong> flex, grid, block, inline-block</li>
+                <li><strong>Sizing:</strong> w-full (width), h-32 (height)</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Naming Convention</summary>
+            <p class="mt-3 mb-5 text-gray-700">Tailwind class names follow a consistent and predictable pattern:</p>
+            <h3 class="text-sm font-semibold mb-2">Class Structure:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Property:</strong> p (padding), m (margin), text, bg (background)</li>
+                <li><strong>Size/Value:</strong> 1, 2, 4, 8, 16 (spacing scale)</li>
+                <li><strong>Modifier:</strong> hover:, focus:, md:, lg: (for states/breakpoints)</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Practical Examples</summary>
+            <p class="mt-3 mb-5 text-gray-700">Real-world examples of combining utilities:</p>
+            <h3 class="text-sm font-semibold mb-2">Common Patterns:</h3>
+            <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto space-y-3">
+                <div><code class="text-sm">&lt;button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"&gt;Button&lt;/button&gt;</code></div>
+                <div><code class="text-sm">&lt;div class="flex gap-4 p-6 bg-gray-50 rounded-lg"&gt;...&lt;/div&gt;</code></div>
+            </div>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Learning Outcomes</summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand the utility-first philosophy</li>
+                <li>Learn to read Tailwind class names</li>
+                <li>Combine utilities effectively</li>
+                <li>Build complex designs without custom CSS</li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Bootstrap Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <a href="../dashboard.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Day 3: Grid system basics (Bootstrap)</h1>
+        
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Understanding Bootstrap's Grid System</summary>
+            <p class="mt-3 mb-5 text-gray-700">
+                Bootstrap's grid system is based on a 12-column layout that helps you create responsive designs. It uses containers, rows, and columns to structure your content across different screen sizes.
+            </p>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Key Components</summary>
+            <p class="mt-3 mb-5 text-gray-700">The grid system consists of three main parts:</p>
+            <h3 class="text-sm font-semibold mb-2">Grid Components:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Container:</strong> The outermost wrapper that centers content</li>
+                <li><strong>Row:</strong> Horizontal groups of columns</li>
+                <li><strong>Column:</strong> Content containers that span 1-12 columns</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Basic Grid Classes</summary>
+            <p class="mt-3 mb-5 text-gray-700">Bootstrap provides responsive classes for different breakpoints:</p>
+            <h3 class="text-sm font-semibold mb-2">Column Classes:</h3>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li><code>col</code> - Auto-sizing columns</li>
+                <li><code>col-*</code> - Specific column spans (col-6 for half width)</li>
+                <li><code>col-sm-*</code>, <code>col-md-*</code>, <code>col-lg-*</code> - Responsive breakpoints</li>
+            </ul>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Basic Example</summary>
+            <p class="mt-3 mb-5 text-gray-700">Here's a simple 2-column layout:</p>
+            <h3 class="text-sm font-semibold mb-2">Bootstrap Grid Code:</h3>
+            <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
+                <code class="text-sm">&lt;div class="container"&gt;<br>&nbsp;&nbsp;&lt;div class="row"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-md-6"&gt;Column 1&lt;/div&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-md-6"&gt;Column 2&lt;/div&gt;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/div&gt;</code>
+            </div>
+        </details>
+        
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Learning Outcomes</summary>
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand the 12-column grid system</li>
+                <li>Know the three main grid components</li>
+                <li>Create responsive layouts</li>
+                <li>Use column sizing and alignment</li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>
