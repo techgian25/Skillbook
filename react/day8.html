@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8: Lists & Keys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 8: Lists & Keys
+        </h1>
+
+
+        <!-- What are Lists -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Lists in React?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Lists allow you to display multiple items dynamically in React.
+                Usually we use the <strong>map()</strong> function to render lists.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Render dynamic data</li>
+                <li>Use arrays to generate UI</li>
+                <li>Common in dashboards and tables</li>
+                <li>Improves UI scalability</li>
+            </ul>
+
+        </details>
+
+
+        <!-- Example -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Lists Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const fruits = ["Apple","Banana","Orange"]
+
+function App(){
+
+ return(
+   &lt;ul&gt;
+     {fruits.map((fruit) =>
+        &lt;li&gt;{fruit}&lt;/li&gt;
+     )}
+   &lt;/ul&gt;
+ )
+
+}
+</pre>
+
+        </details>
+
+
+        <!-- Keys -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Keys?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Keys are special attributes used in React lists to identify elements uniquely.
+                They help React efficiently update and re-render lists.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+{items.map((item) =>
+  &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+)}
+</pre>
+
+        </details>
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Render lists using map()</li>
+                <li>Understand React keys</li>
+                <li>Improve performance with unique keys</li>
+                <li>Create dynamic UI lists</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        1. What method is commonly used to render lists in React?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) map()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) filter()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) reduce()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) find()</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        2. What are React keys used for?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>a) Styling components</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>b) Identifying elements uniquely</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>c) Connecting database</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>d) Installing React</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        3. Keys help React improve?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>a) Performance</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>b) CSS styling</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>c) Database queries</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>d) Server speed</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        4. Where should the key attribute be placed?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>On the list element</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>Inside CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>Inside JavaScript file only</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>On HTML body</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        5. What should keys ideally be?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>Unique</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>Random</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>CSS based</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>HTML tag</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        6. Which data type is commonly used for lists?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>Array</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>String</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>Boolean</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>Number</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        7. Why should indexes not be used as keys in dynamic lists?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="a" class="mr-2">
+                        <span>They may cause rendering issues</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="b" class="mr-2">
+                        <span>They improve performance</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="c" class="mr-2">
+                        <span>They change CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="d" class="mr-2">
+                        <span>They connect database</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a'
+            }
+
+            const explanations = {
+
+                q1: "map() is used to render lists in React.",
+                q2: "Keys uniquely identify list elements.",
+                q3: "Keys improve React rendering performance.",
+                q4: "Keys should be placed on list elements.",
+                q5: "Keys must be unique.",
+                q6: "Arrays are commonly used to generate lists.",
+                q7: "Indexes can cause UI update problems in dynamic lists."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 7 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

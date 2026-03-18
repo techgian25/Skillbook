@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14: Angular Performance Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 14: Angular Performance Optimization
+        </h1>
+
+
+        <!-- What is Performance Optimization -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is Performance Optimization?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Performance optimization improves the speed and efficiency of an Angular application.
+                It ensures faster loading and better user experience.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Improve app speed</li>
+                <li>Reduce load time</li>
+                <li>Enhance user experience</li>
+                <li>Optimize resource usage</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Change Detection -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Change Detection Strategy
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Angular uses change detection to update the UI.
+                Using OnPush strategy improves performance.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+@Component({
+ changeDetection: ChangeDetectionStrategy.OnPush
+})
+</pre>
+
+        </details>
+
+
+
+        <!-- Lazy Loading -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Lazy Loading
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Lazy loading loads modules only when needed.
+                This reduces initial bundle size.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Faster app startup</li>
+                <li>Better performance</li>
+                <li>Load modules on demand</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- TrackBy -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                trackBy in ngFor
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                trackBy helps Angular identify items efficiently in lists.
+                It prevents unnecessary DOM updates.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+<li *ngFor="let item of items; trackBy: trackById">
+</li>
+</pre>
+
+        </details>
+
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Improve Angular performance</li>
+                <li>Use OnPush strategy</li>
+                <li>Apply lazy loading</li>
+                <li>Optimize lists using trackBy</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Performance optimization improves?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) App speed</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) CSS color</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) HTML tags</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) Database schema</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Which strategy improves change detection?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>OnPush</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>Default</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>Fast</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>Auto</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Lazy loading helps to?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>Reduce initial load</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>Increase CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>Delete data</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>Change HTML</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. trackBy is used with?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>ngFor</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>ngIf</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>ngClass</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>ngModel</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. trackBy helps to?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>Optimize DOM updates</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>Style elements</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>Create routes</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>Handle forms</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">6. Performance optimization improves?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>User experience</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>Database queries</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>CSS frameworks</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>HTML tags</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Optimization improves speed.",
+                q2: "OnPush improves performance.",
+                q3: "Lazy loading reduces load time.",
+                q4: "trackBy is used with ngFor.",
+                q5: "It avoids unnecessary DOM updates.",
+                q6: "It improves user experience."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 6 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

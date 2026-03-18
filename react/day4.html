@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: React Props</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 4: React Props
+        </h1>
+
+
+        <!-- What are Props -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Props?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Props (short for properties) are used to pass data from one component to another.
+                Usually they are passed from a parent component to a child component.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Props allow data sharing between components</li>
+                <li>Props are read-only</li>
+                <li>Props make components reusable</li>
+                <li>Passed as attributes in JSX</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Example -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Props Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+function Welcome(props){
+ return &lt;h1&gt;Hello {props.name}&lt;/h1&gt;
+}
+
+&lt;Welcome name="React" /&gt;
+</pre>
+
+        </details>
+
+
+
+        <!-- Props Rules -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Important Props Rules
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Props are immutable (cannot change)</li>
+                <li>Props come from parent components</li>
+                <li>Props are passed using attributes</li>
+                <li>Props improve component reusability</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand how props work</li>
+                <li>Pass data between components</li>
+                <li>Create reusable components</li>
+                <li>Follow props best practices</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        1. What does "props" stand for in React?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) Properties</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Processes</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) Programs</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) Packages</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        2. Props are passed from which component?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>a) Child component</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>b) Parent component</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>c) CSS component</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>d) DOM component</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        3. Are props mutable or immutable?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>a) Mutable</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>b) Immutable</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>c) Dynamic</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>d) Static</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        4. How are props passed to a component?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>a) Using HTML attributes</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>b) Using CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>c) Using SQL</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>d) Using Java</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        5. What is the main benefit of props?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>a) Styling pages</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>b) Reusable components</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>c) Database storage</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>d) Server management</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        6. How do you access props inside a component?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>a) props.name</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>b) name.props</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>c) props()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>d) useProps()</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'b',
+                q4: 'a',
+                q5: 'b',
+                q6: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Props stands for properties in React.",
+                q2: "Props are passed from parent components to child components.",
+                q3: "Props are immutable meaning they cannot be changed.",
+                q4: "Props are passed using JSX attributes.",
+                q5: "Props help create reusable components.",
+                q6: "Props are accessed using props.propertyName."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 6 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

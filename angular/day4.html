@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: Angular Templates & Data Binding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+   <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 4: Templates & Data Binding
+        </h1>
+
+
+        <!-- Angular Templates -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Angular Templates?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Templates define how Angular components display data in the UI.
+                They use HTML combined with Angular syntax.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Display component data</li>
+                <li>Bind data dynamically</li>
+                <li>Handle events</li>
+                <li>Create interactive UI</li>
+            </ul>
+
+        </details>
+
+
+        <!-- Data Binding -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is Data Binding?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Data binding connects the component class with the template view.
+                It allows dynamic updates between UI and data.
+            </p>
+
+            <h3 class="text-sm font-semibold mb-2">Types of Data Binding:</h3>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Interpolation</li>
+                <li>Property Binding</li>
+                <li>Event Binding</li>
+                <li>Two-Way Binding</li>
+            </ul>
+
+        </details>
+
+
+        <!-- Interpolation -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Interpolation Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+export class AppComponent {
+ name = "Angular";
+}
+
+&lt;h1&gt;Hello {{name}}&lt;/h1&gt;
+</pre>
+
+        </details>
+
+
+        <!-- Property Binding -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Property Binding Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+&lt;img [src]="imageUrl"&gt;
+</pre>
+
+        </details>
+
+
+        <!-- Event Binding -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Event Binding Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+&lt;button (click)="sayHello()"&gt;Click&lt;/button&gt;
+</pre>
+
+        </details>
+
+
+        <!-- Two Way Binding -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Two-Way Binding Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+&lt;input [(ngModel)]="username"&gt;
+</pre>
+
+        </details>
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand Angular templates</li>
+                <li>Learn data binding types</li>
+                <li>Connect UI with component data</li>
+                <li>Create dynamic interfaces</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What do Angular templates define?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) UI structure</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Database tables</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) Server APIs</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) CSS frameworks</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Which syntax is used for interpolation?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>{{ }}</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>[]</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>{ }</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Which binding updates element properties?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>Property Binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>Event Binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>CSS Binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>Service Binding</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Which binding handles user events?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>Event Binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>Interpolation</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>Database Binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>Pipe Binding</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. Which binding synchronizes UI and component?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>Two-way binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>Event binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>Property binding</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>CSS binding</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">6. Two-way binding uses?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>[( )]</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>{{ }}</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>[ ]</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>( )</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Templates define the UI structure.",
+                q2: "Interpolation uses {{ }} syntax.",
+                q3: "Property binding updates element properties.",
+                q4: "Event binding handles user actions.",
+                q5: "Two-way binding syncs UI and component data.",
+                q6: "Two-way binding uses [( )] syntax."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 6 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

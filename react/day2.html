@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: JSX in React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 2: JSX in React
+        </h1>
+
+        <!-- What is JSX -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is JSX?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                JSX stands for JavaScript XML. It allows developers to write HTML-like syntax inside JavaScript.
+                React uses JSX to describe what the UI should look like.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Write HTML inside JavaScript</li>
+                <li>Makes UI code easier to read</li>
+                <li>Converted to JavaScript using Babel</li>
+            </ul>
+
+        </details>
+
+        <!-- JSX Example -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                JSX Example
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Example of JSX syntax:
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const element = &lt;h1&gt;Hello React&lt;/h1&gt;;
+</pre>
+
+        </details>
+
+        <!-- JSX Rules -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                JSX Rules
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Only one parent element</li>
+                <li>Use className instead of class</li>
+                <li>Use camelCase for attributes</li>
+                <li>JavaScript expressions inside { }</li>
+            </ul>
+
+        </details>
+
+        <!-- JSX Expressions -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                JSX Expressions
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                You can use JavaScript expressions inside JSX using curly braces.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const name = "React";
+const element = &lt;h1&gt;Hello {name}&lt;/h1&gt;;
+</pre>
+
+        </details>
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand what JSX is</li>
+                <li>Write HTML inside JavaScript</li>
+                <li>Learn JSX syntax rules</li>
+                <li>Use JavaScript expressions in JSX</li>
+            </ul>
+
+        </details>
+
+
+        <!-- Quiz Section -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        1. What does JSX stand for?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) JavaScript XML</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Java Syntax Extension</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) JavaScript Example</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) JSON XML</span>
+                    </label>
+
+                </div>
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        2. JSX allows developers to write?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>a) SQL inside JavaScript</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>b) HTML inside JavaScript</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>c) CSS inside JavaScript</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>d) Python inside JavaScript</span>
+                    </label>
+
+                </div>
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        3. Which tool converts JSX into JavaScript?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>a) Webpack</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>b) Babel</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>c) Node</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>d) React DOM</span>
+                    </label>
+
+                </div>
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        4. What is used to write JavaScript expressions inside JSX?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>a) ()</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>b) { }</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>c) []</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>d) &lt;&gt;</span>
+                    </label>
+
+                </div>
+
+
+                <div class="quiz-question">
+
+                    <p class="font-medium mb-2">
+                        5. Which attribute replaces "class" in JSX?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>a) cssClass</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>b) className</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>c) classReact</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>d) styleClass</span>
+                    </label>
+
+                </div>
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            }
+
+            const explanations = {
+
+                q1: "JSX stands for JavaScript XML.",
+                q2: "JSX allows developers to write HTML-like code inside JavaScript.",
+                q3: "Babel compiles JSX into regular JavaScript.",
+                q4: "Curly braces {} allow JavaScript expressions inside JSX.",
+                q5: "JSX uses className instead of class."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11: React Router</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+<header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 11: React Router
+        </h1>
+
+
+        <!-- What is React Router -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is React Router?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                React Router is a library used to enable navigation between different pages
+                in a React application without reloading the browser.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Create multiple pages in a React app</li>
+                <li>Navigate between components</li>
+                <li>Build Single Page Applications (SPA)</li>
+                <li>Manage application routes</li>
+            </ul>
+
+        </details>
+
+
+        <!-- Install Router -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Installing React Router
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+npm install react-router-dom
+</pre>
+
+        </details>
+
+
+        <!-- Router Example -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                React Router Example
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App(){
+ return(
+  &lt;BrowserRouter&gt;
+    &lt;Routes&gt;
+      &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+      &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+    &lt;/Routes&gt;
+  &lt;/BrowserRouter&gt;
+ )
+}
+</pre>
+
+        </details>
+
+
+        <!-- Navigation -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Navigation with Link
+            </summary>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+import { Link } from "react-router-dom";
+
+&lt;Link to="/about"&gt;About Page&lt;/Link&gt;
+</pre>
+
+        </details>
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand React Router</li>
+                <li>Create multiple pages</li>
+                <li>Navigate between routes</li>
+                <li>Build SPA navigation</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        1. What is React Router used for?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) Navigation between pages</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Styling UI</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) Database queries</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) Server hosting</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        2. Which package is used for routing in React?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>a) react-router-dom</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>b) react-dom-router</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>c) router-react</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>d) react-navigation</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        3. Which component wraps the entire routing system?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>a) BrowserRouter</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>b) RouterDOM</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>c) RouteList</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>d) LinkRouter</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        4. Which component defines individual routes?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>a) Route</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>b) Router</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>c) Link</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>d) Switch</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        5. Which component is used to navigate without page reload?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>a) Link</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>b) Anchor</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>c) Button</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>d) Router</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        6. React Router helps build?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>a) Single Page Applications</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>b) Static HTML pages</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>c) Database tables</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>d) CSS layouts</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        7. What does the "path" prop define?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="a" class="mr-2">
+                        <span>a) URL path</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="b" class="mr-2">
+                        <span>b) CSS style</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="c" class="mr-2">
+                        <span>c) Database path</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="d" class="mr-2">
+                        <span>d) Server path</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        8. What does the "element" prop render?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="a" class="mr-2">
+                        <span>a) Component</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="b" class="mr-2">
+                        <span>b) CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="c" class="mr-2">
+                        <span>c) Database</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="d" class="mr-2">
+                        <span>d) HTML body</span>
+                    </label>
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a',
+                q8: 'a'
+            }
+
+            const explanations = {
+
+                q1: "React Router enables navigation between pages.",
+                q2: "react-router-dom is the routing package.",
+                q3: "BrowserRouter wraps the routing system.",
+                q4: "Route defines individual paths.",
+                q5: "Link navigates without reloading page.",
+                q6: "React Router helps build SPA.",
+                q7: "path defines the URL path.",
+                q8: "element renders a component."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 8 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

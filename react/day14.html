@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14: React Performance Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 14: React Performance Optimization
+        </h1>
+
+
+        <!-- What is Performance Optimization -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                What is Performance Optimization?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Performance optimization in React helps improve application speed and reduce unnecessary re-renders.
+                It ensures smoother user experience and faster UI updates.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Reduce unnecessary component renders</li>
+                <li>Improve application speed</li>
+                <li>Optimize large applications</li>
+                <li>Enhance user experience</li>
+            </ul>
+
+        </details>
+
+
+        <!-- React.memo -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                React.memo
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                React.memo prevents unnecessary re-rendering of functional components
+                when props do not change.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const MyComponent = React.memo(function MyComponent(props){
+ return &lt;div&gt;{props.name}&lt;/div&gt;
+})
+</pre>
+
+        </details>
+
+
+        <!-- useMemo -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                useMemo Hook
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                useMemo memoizes computed values to avoid expensive recalculations.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const result = useMemo(()=>{
+ return heavyCalculation(data)
+},[data])
+</pre>
+
+        </details>
+
+
+        <!-- useCallback -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                useCallback Hook
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                useCallback memoizes functions to prevent unnecessary function recreation.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+const handleClick = useCallback(()=>{
+ console.log("Clicked")
+},[])
+</pre>
+
+        </details>
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand React performance optimization</li>
+                <li>Prevent unnecessary re-renders</li>
+                <li>Use React.memo effectively</li>
+                <li>Optimize heavy computations</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        1. What is the goal of React performance optimization?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) Improve application speed</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Styling UI</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) Creating database</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) Hosting server</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        2. What does React.memo do?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>a) Prevent unnecessary re-renders</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>b) Create routes</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>c) Create state</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>d) Manage CSS</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        3. Which hook memoizes values?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>a) useMemo</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>b) useState</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>c) useRouter</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>d) useEffect</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        4. Which hook memoizes functions?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>a) useCallback</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>b) useMemo</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>c) useState</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>d) useContext</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        5. Performance optimization helps reduce?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>a) Unnecessary renders</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>b) CSS styles</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>c) HTML tags</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>d) Server requests</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        6. React.memo works mainly with?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>a) Functional components</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>b) CSS files</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>c) Database tables</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>d) HTML templates</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        7. useMemo is useful for?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="a" class="mr-2">
+                        <span>a) Heavy calculations</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="b" class="mr-2">
+                        <span>b) CSS styling</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="c" class="mr-2">
+                        <span>c) Routing</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q7" value="d" class="mr-2">
+                        <span>d) Database queries</span>
+                    </label>
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">
+                        8. useCallback prevents?
+                    </p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="a" class="mr-2">
+                        <span>a) Function recreation</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="b" class="mr-2">
+                        <span>b) CSS loading</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="c" class="mr-2">
+                        <span>c) Database calls</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q8" value="d" class="mr-2">
+                        <span>d) HTML rendering</span>
+                    </label>
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a',
+                q8: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Optimization improves speed and performance.",
+                q2: "React.memo avoids unnecessary component renders.",
+                q3: "useMemo memoizes values.",
+                q4: "useCallback memoizes functions.",
+                q5: "Optimization reduces unnecessary renders.",
+                q6: "React.memo is used with functional components.",
+                q7: "useMemo helps with expensive calculations.",
+                q8: "useCallback prevents function recreation."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 8 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

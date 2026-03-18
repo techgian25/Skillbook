@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: Angular Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+   <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 6: Angular Pipes
+        </h1>
+
+
+        <!-- What are Pipes -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Angular Pipes?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Pipes are used to transform data in Angular templates.
+                They help format values like text, dates, currency, and more.
+            </p>
+
+            <h3 class="text-sm font-semibold mb-2">Common Uses:</h3>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Format dates</li>
+                <li>Transform text</li>
+                <li>Display currency</li>
+                <li>Filter or modify data</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Built-in Pipes -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Built-in Pipes
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>uppercase</li>
+                <li>lowercase</li>
+                <li>date</li>
+                <li>currency</li>
+                <li>json</li>
+            </ul>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+{{ name | uppercase }}
+{{ today | date }}
+{{ price | currency }}
+</pre>
+
+        </details>
+
+
+
+        <!-- Custom Pipes -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Custom Pipes
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                You can create your own pipes using Angular CLI.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+ng generate pipe myPipe
+</pre>
+
+        </details>
+
+
+
+        <!-- Chaining Pipes -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Chaining Pipes
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Multiple pipes can be used together to transform data.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+{{ name | uppercase | slice:0:5 }}
+</pre>
+
+        </details>
+
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand Angular pipes</li>
+                <li>Use built-in pipes</li>
+                <li>Create custom pipes</li>
+                <li>Transform data in templates</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. What are Angular pipes used for?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) Data transformation</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Database connection</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) Server hosting</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) CSS styling</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Which symbol is used for pipes?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>|</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>#</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>@</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>&</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Which pipe converts text to uppercase?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>uppercase</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>lowercase</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>date</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>json</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Which pipe formats dates?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>date</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>uppercase</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>currency</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>json</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. How do you create a custom pipe?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>ng generate pipe</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>ng pipe create</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>npm pipe</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>angular pipe</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">6. Pipes can be combined using?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>Chaining</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>Looping</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>Mapping</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>Binding</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Pipes transform data.",
+                q2: "Pipe symbol is |",
+                q3: "uppercase converts text to uppercase.",
+                q4: "date pipe formats dates.",
+                q5: "Use ng generate pipe command.",
+                q6: "Multiple pipes can be chained."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 6 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>

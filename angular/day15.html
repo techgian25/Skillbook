@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15: Advanced Angular Concepts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="../index.html"><img src="../images/logo-TG.png" alt="Logo" class="h-8 w-auto mr-2"></a>
+            </div>
+            <!-- Email -->
+            <div>
+                <a href="index.html" class="text-blue-600 underline">Back to Learning Tracker</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-8">
+            Day 15: Advanced Angular Concepts
+        </h1>
+
+
+        <!-- Advanced Concepts -->
+
+        <details open class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                What are Advanced Angular Concepts?
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Advanced Angular concepts help you build scalable, high-performance, and enterprise-level applications.
+                These topics are important for real-world development and interviews.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Lazy Loading & Module Optimization</li>
+                <li>Guards (AuthGuard, CanActivate)</li>
+                <li>Interceptors</li>
+                <li>Standalone Components</li>
+                <li>Signals (latest Angular)</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Route Guards -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Route Guards
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Guards are used to control access to routes.
+                They protect routes based on conditions like authentication.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+canActivate(){
+ return isLoggedIn;
+}
+</pre>
+
+        </details>
+
+
+
+        <!-- Interceptors -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                HTTP Interceptors
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Interceptors modify HTTP requests and responses globally.
+                Used for authentication tokens, logging, and error handling.
+            </p>
+
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+intercept(req, next){
+ return next.handle(req);
+}
+</pre>
+
+        </details>
+
+
+
+        <!-- Standalone Components -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Standalone Components
+            </summary>
+
+            <p class="mt-3 mb-5 text-gray-700">
+                Standalone components allow building Angular apps without NgModules.
+                They simplify structure and improve performance.
+            </p>
+
+        </details>
+
+
+
+        <!-- Outcome -->
+
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer">
+                Outcome
+            </summary>
+
+            <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Understand advanced Angular features</li>
+                <li>Secure apps using guards</li>
+                <li>Handle HTTP using interceptors</li>
+                <li>Build scalable Angular applications</li>
+            </ul>
+
+        </details>
+
+
+
+        <!-- Quiz -->
+
+        <details class="mb-4 bg-blue-50 p-4 rounded-lg shadow-sm">
+
+            <summary class="text-lg font-semibold cursor-pointer text-blue-800">
+                📝 Quiz: Test Your Knowledge
+            </summary>
+
+            <div class="mt-4 space-y-6">
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">1. Route guards are used for?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>a) Route protection</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>b) Styling UI</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>c) HTML rendering</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="d" class="mr-2">
+                        <span>d) Database queries</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">2. Interceptors are used to?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>Modify HTTP requests</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>Design UI</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>Create forms</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="d" class="mr-2">
+                        <span>Manage CSS</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">3. Standalone components remove need for?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>NgModules</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>HTML</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="d" class="mr-2">
+                        <span>JavaScript</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">4. Guards work with?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="a" class="mr-2">
+                        <span>Routing</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="b" class="mr-2">
+                        <span>CSS</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="c" class="mr-2">
+                        <span>Forms</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q4" value="d" class="mr-2">
+                        <span>HTML</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">5. Interceptors help with?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="a" class="mr-2">
+                        <span>Authentication & logging</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="b" class="mr-2">
+                        <span>UI design</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="c" class="mr-2">
+                        <span>Database queries</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q5" value="d" class="mr-2">
+                        <span>HTML structure</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="quiz-question">
+                    <p class="font-medium mb-2">6. Advanced concepts help build?</p>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="a" class="mr-2">
+                        <span>Scalable applications</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="b" class="mr-2">
+                        <span>CSS files</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="c" class="mr-2">
+                        <span>HTML pages</span>
+                    </label>
+
+                    <label class="flex items-center">
+                        <input type="radio" name="q6" value="d" class="mr-2">
+                        <span>Database tables</span>
+                    </label>
+
+                </div>
+
+
+
+                <div class="flex gap-4 mt-6">
+
+                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Check Answers
+                    </button>
+
+                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700">
+                        Reset Quiz
+                    </button>
+
+                </div>
+
+
+                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+
+                    <h3 class="font-bold text-lg mb-2">
+                        Quiz Results:
+                    </h3>
+
+                    <p id="score" class="text-xl font-semibold mb-2"></p>
+
+                    <div id="answers" class="space-y-2"></div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <script>
+
+        function checkQuiz() {
+
+            const answers = {
+                q1: 'a',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a'
+            }
+
+            const explanations = {
+
+                q1: "Guards protect routes.",
+                q2: "Interceptors modify HTTP requests.",
+                q3: "Standalone removes NgModules.",
+                q4: "Guards are used in routing.",
+                q5: "Used for auth and logging.",
+                q6: "They build scalable apps."
+
+            }
+
+            let score = 0
+            const results = []
+
+            Object.keys(answers).forEach(question => {
+
+                const selected = document.querySelector(`input[name="${question}"]:checked`)
+                const correct = answers[question]
+
+                if (selected && selected.value === correct) {
+
+                    score++
+                    results.push(`<div class="text-green-600">✓ Question ${question[1]}: Correct</div>`)
+
+                } else {
+
+                    results.push(`<div class="text-red-600">✗ Question ${question[1]}: Incorrect. ${explanations[question]}</div>`)
+
+                }
+
+            })
+
+            document.getElementById('score').textContent = `You got ${score} out of 6 correct!`
+            document.getElementById('answers').innerHTML = results.join('')
+            document.getElementById('quiz-results').classList.remove('hidden')
+
+        }
+
+        function resetQuiz() {
+
+            const radios = document.querySelectorAll('input[type="radio"]')
+            radios.forEach(radio => radio.checked = false)
+
+            document.getElementById('quiz-results').classList.add('hidden')
+
+        }
+
+    </script>
+
+</body>
+
+</html>
