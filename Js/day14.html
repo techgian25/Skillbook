@@ -30,7 +30,8 @@
                 What are Regular Expressions?
             </summary>
             <p class="mt-3 mb-5 text-gray-700">
-                Regular expressions (regex) are patterns used to match character combinations in strings. They are powerful tools for searching, validating, and manipulating text.
+                Regular expressions (regex) are patterns used to match character combinations in strings. They are
+                powerful tools for searching, validating, and manipulating text.
             </p>
             <h3 class="text-sm font-semibold mb-2">Common Use Cases:</h3>
             <ul class="list-disc pl-6 space-y-1 text-gray-700">
@@ -188,7 +189,8 @@ console.log(match[2]); // "/path" (path)</code></pre>
                 JavaScript provides several methods to work with regular expressions.
             </p>
             <h3 class="text-sm font-semibold mb-2">String Methods:</h3>
-            <pre class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const text = "Hello, my email is john@example.com and my phone is 123-456-7890";
+            <pre
+                class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto"><code>const text = "Hello, my email is john@example.com and my phone is 123-456-7890";
 
 // match() - returns array of matches
 const emails = text.match(/[\w.-]+@[\w.-]+\.\w+/g);
@@ -362,6 +364,14 @@ const htmlTags = /<(\w+)>[^<]*<\/\1>/g;
 const html = "&lt;p&gt;Hello&lt;/p&gt; &lt;div&gt;World&lt;/div&gt;";
 console.log(html.match(htmlTags)); // ["&lt;p&gt;Hello&lt;/p&gt;", "&lt;div&gt;World&lt;/div&gt;"]</code></pre>
         </details>
+        <nav class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+            aria-label="JavaScript lesson navigation">
+            <a href="day13.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Previous: Day 13</a>
+            <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
+            <a href="day15.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Next: Day 15</a>
+        </nav>
     </div>
+
 </body>
+
 </html>

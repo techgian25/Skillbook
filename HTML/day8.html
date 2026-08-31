@@ -101,7 +101,8 @@
             </summary>
             <div class="mt-4 space-y-6">
                 <div class="quiz-question">
-                    <p class="font-medium mb-2">1. Which display value makes an element take the full available width?</p>
+                    <p class="font-medium mb-2">1. Which display value makes an element take the full available width?
+                    </p>
                     <div class="space-y-2">
                         <label class="flex items-center">
                             <input type="radio" name="q1" value="a" class="mr-2">
@@ -123,7 +124,8 @@
                 </div>
 
                 <div class="quiz-question">
-                    <p class="font-medium mb-2">2. Which CSS property controls stacking order of positioned elements?</p>
+                    <p class="font-medium mb-2">2. Which CSS property controls stacking order of positioned elements?
+                    </p>
                     <div class="space-y-2">
                         <label class="flex items-center">
                             <input type="radio" name="q2" value="a" class="mr-2">
@@ -189,7 +191,8 @@
                 </div>
 
                 <div class="quiz-question">
-                    <p class="font-medium mb-2">5. Which display value allows width and height but keeps elements inline?</p>
+                    <p class="font-medium mb-2">5. Which display value allows width and height but keeps elements
+                        inline?</p>
                     <div class="space-y-2">
                         <label class="flex items-center">
                             <input type="radio" name="q5" value="a" class="mr-2">
@@ -212,51 +215,59 @@
 
             </div>
 
-                <div class="flex gap-4 mt-6">
-                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        Check Answers
-                    </button>
-                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                        Reset Quiz
-                    </button>
-                </div>
-
-                <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
-                    <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
-                    <p id="score" class="text-xl font-semibold mb-2"></p>
-                    <div id="answers" class="space-y-2"></div>
-                </div>
+            <div class="flex gap-4 mt-6">
+                <button onclick="checkQuiz()"
+                    class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Check Answers
+                </button>
+                <button onclick="resetQuiz()"
+                    class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                    Reset Quiz
+                </button>
             </div>
+
+            <div id="quiz-results" class="mt-4 p-4 bg-gray-100 rounded-lg hidden">
+                <h3 class="font-bold text-lg mb-2">Quiz Results:</h3>
+                <p id="score" class="text-xl font-semibold mb-2"></p>
+                <div id="answers" class="space-y-2"></div>
+            </div>
+
         </details>
+        <nav class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+            aria-label="HTML lesson navigation">
+            <a href="day7.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Previous: Day 7</a>
+            <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
+            <a href="day9.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Next: Day 9</a>
+        </nav>
     </div>
-<script>
-function checkQuiz(){
-    const answers={q1:'b',q2:'b',q3:'a',q4:'a',q5:'c'};
-    const explanations={
-        q1:'Block elements take full width.',
-        q2:'z-index controls stacking order.',
-        q3:'display:none hides element completely.',
-        q4:'Absolute positioning is relative to closest positioned ancestor.',
-        q5:'inline-block allows width/height and sits inline.'
-    };
-    let score=0;
-    const results=[];
-    for(let i=1;i<=5;i++){
-        const sel=document.querySelector(`input[name="q${i}"]:checked`);
-        const correct=answers[`q${i}`];
-        if(sel&&sel.value===correct){
-            score++;
-            results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
-        } else {
-            results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+    <script>
+        function checkQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'a', q4: 'a', q5: 'c' };
+            const explanations = {
+                q1: 'Block elements take full width.',
+                q2: 'z-index controls stacking order.',
+                q3: 'display:none hides element completely.',
+                q4: 'Absolute positioning is relative to closest positioned ancestor.',
+                q5: 'inline-block allows width/height and sits inline.'
+            };
+            let score = 0;
+            const results = [];
+            for (let i = 1; i <= 5; i++) {
+                const sel = document.querySelector(`input[name="q${i}"]:checked`);
+                const correct = answers[`q${i}`];
+                if (sel && sel.value === correct) {
+                    score++;
+                    results.push(`<div class="text-green-600">✓ Question ${i}: Correct</div>`);
+                } else {
+                    results.push(`<div class="text-red-600">✗ Question ${i}: Incorrect. ${explanations[`q${i}`]}</div>`);
+                }
+            }
+            document.getElementById('score').textContent = `You got ${score} out of 5 correct!`;
+            document.getElementById('answers').innerHTML = results.join('');
+            document.getElementById('quiz-results').classList.remove('hidden');
         }
-    }
-    document.getElementById('score').textContent=`You got ${score} out of 5 correct!`;
-    document.getElementById('answers').innerHTML=results.join('');
-    document.getElementById('quiz-results').classList.remove('hidden');
-}
-function resetQuiz(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.getElementById('quiz-results').classList.add('hidden');}
-</script>
+        function resetQuiz() { document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false); document.getElementById('quiz-results').classList.add('hidden'); }
+    </script>
 </body>
 
 </html>

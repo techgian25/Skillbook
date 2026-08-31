@@ -170,7 +170,8 @@
                 </div>
 
                 <div class="quiz-question">
-                    <p class="font-medium mb-2">4. What will be logged to the console when you run: console.log("Hello, World!");</p>
+                    <p class="font-medium mb-2">4. What will be logged to the console when you run: console.log("Hello,
+                        World!");</p>
                     <div class="space-y-2">
                         <label class="flex items-center">
                             <input type="radio" name="q4" value="a" class="mr-2">
@@ -192,7 +193,8 @@
                 </div>
 
                 <div class="quiz-question">
-                    <p class="font-medium mb-2">5. Which of the following is a correct way to add JavaScript directly in HTML?</p>
+                    <p class="font-medium mb-2">5. Which of the following is a correct way to add JavaScript directly in
+                        HTML?</p>
                     <div class="space-y-2">
                         <label class="flex items-center">
                             <input type="radio" name="q5" value="a" class="mr-2">
@@ -214,10 +216,12 @@
                 </div>
 
                 <div class="flex gap-4 mt-6">
-                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <button onclick="checkQuiz()"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                         Check Answers
                     </button>
-                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                    <button onclick="resetQuiz()"
+                        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
                         Reset Quiz
                     </button>
                 </div>
@@ -227,8 +231,17 @@
                     <p id="score" class="text-xl font-semibold mb-2"></p>
                     <div id="answers" class="space-y-2"></div>
                 </div>
+
             </div>
         </details>
+        <nav class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+            aria-label="JavaScript lesson navigation">
+            <span class="cursor-not-allowed rounded bg-gray-100 px-4 py-2 text-gray-400"
+                aria-disabled="true">Previous</span>
+            <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
+            <a href="day2.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Next: Day
+                2</a>
+        </nav>
     </div>
 
     <script>

@@ -307,10 +307,12 @@ do {
                 </div>
 
                 <div class="flex gap-4 mt-6">
-                    <button onclick="checkQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <button onclick="checkQuiz()"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                         Check Answers
                     </button>
-                    <button onclick="resetQuiz()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                    <button onclick="resetQuiz()"
+                        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
                         Reset Quiz
                     </button>
                 </div>
@@ -320,8 +322,17 @@ do {
                     <p id="score" class="text-xl font-semibold mb-2"></p>
                     <div id="answers" class="space-y-2"></div>
                 </div>
+                
             </div>
         </details>
+        <nav class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+                    aria-label="JavaScript lesson navigation">
+                    <a href="day4.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Previous: Day
+                        4</a>
+                    <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
+                    <a href="day6.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Next: Day
+                        6</a>
+                </nav>
     </div>
 
     <script>
@@ -369,4 +380,5 @@ do {
         }
     </script>
 </body>
+
 </html>
