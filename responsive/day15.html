@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 15 - Bootstrap Themes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100">
     <header class="sticky top-0 bg-white shadow-sm border-b z-50 mb-6">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
@@ -19,24 +21,19 @@
     </header>
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
         <h1 class="text-3xl font-bold text-center mb-8">Day 15: Custom themes & SCSS (Bootstrap)</h1>
-        
+
         <!-- Section 1 -->
-        <div class="mb-6 border-l-4 border-blue-500">
-            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition cursor-pointer rounded">
-                <h2 class="text-2xl font-semibold text-left">Understanding Bootstrap SCSS</h2>
-                <span class="text-2xl text-blue-600">▼</span>
-            </button>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Understanding Bootstrap SCSS</summary>
             <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
-                <p class="text-gray-700">Bootstrap is written in SCSS (Sass), which allows for variables, mixins, and functions. You can customize Bootstrap by overriding SCSS variables before importing Bootstrap.</p>
+                <p class="text-gray-700">Bootstrap is written in SCSS (Sass), which allows for variables, mixins, and
+                    functions. You can customize Bootstrap by overriding SCSS variables before importing Bootstrap.</p>
             </div>
-        </div>
-        
+        </details>
+
         <!-- Section 2 -->
-        <div class="mb-6 border-l-4 border-green-500">
-            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 transition cursor-pointer rounded">
-                <h2 class="text-2xl font-semibold text-left">Customizable Variables</h2>
-                <span class="text-2xl text-green-600">▼</span>
-            </button>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Customizable Variables</summary>
             <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
                 <ul class="list-disc list-inside text-gray-700">
                     <li>Color variables (<code>$primary</code>, <code>$success</code>, etc.)</li>
@@ -45,14 +42,11 @@
                     <li>Breakpoint variables for responsive design</li>
                 </ul>
             </div>
-        </div>
-        
+        </details>
+
         <!-- Section 3 -->
-        <div class="mb-6 border-l-4 border-purple-500">
-            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 transition cursor-pointer rounded">
-                <h2 class="text-2xl font-semibold text-left">SCSS Mixins</h2>
-                <span class="text-2xl text-purple-600">▼</span>
-            </button>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">SCSS Mixins</summary>
             <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
                 <p class="text-gray-700 mb-3">Bootstrap provides helpful SCSS mixins:</p>
                 <ul class="list-disc list-inside text-gray-700">
@@ -61,28 +55,23 @@
                     <li><code>@mixin visually-hidden()</code> - Hide from visual but keep for screen readers</li>
                 </ul>
             </div>
-        </div>
-        
+        </details>
+
         <!-- Section 4 -->
-        <div class="mb-6 border-l-4 border-orange-500">
-            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-orange-50 hover:bg-orange-100 transition cursor-pointer rounded">
-                <h2 class="text-2xl font-semibold text-left">Custom Theme Example</h2>
-                <span class="text-2xl text-orange-600">▼</span>
-            </button>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Custom Theme Example</summary>
             <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
                 <p class="text-gray-700 mb-3">Override Bootstrap variables:</p>
                 <div class="bg-gray-100 p-4 rounded border border-gray-300 overflow-x-auto">
-                    <code class="text-sm">// Before importing Bootstrap<br>$primary: #0066cc;<br>$secondary: #666666;<br>$danger: #ff4444;<br>$font-family-base: 'Roboto', sans-serif;<br><br>@import 'bootstrap/scss/bootstrap';</code>
+                    <code
+                        class="text-sm">// Before importing Bootstrap<br>$primary: #0066cc;<br>$secondary: #666666;<br>$danger: #ff4444;<br>$font-family-base: 'Roboto', sans-serif;<br><br>@import 'bootstrap/scss/bootstrap';</code>
                 </div>
             </div>
-        </div>
-        
+        </details>
+
         <!-- Section 5 -->
-        <div class="mb-6 border-l-4 border-red-500">
-            <button onclick="toggleSection(this)" class="w-full flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 transition cursor-pointer rounded">
-                <h2 class="text-2xl font-semibold text-left">Theme Best Practices</h2>
-                <span class="text-2xl text-red-600">▼</span>
-            </button>
+        <details class="mb-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+            <summary class="text-lg font-semibold cursor-pointer">Theme Best Practices</summary>
             <div class="section-content p-4 max-h-96 overflow-hidden transition-all duration-300">
                 <ul class="list-disc list-inside text-gray-700">
                     <li>Override variables, don't modify Bootstrap source</li>
@@ -92,22 +81,22 @@
                     <li>Keep brand colors centralized</li>
                 </ul>
             </div>
-        </div>            <nav
-                class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
-                aria-label="Responsive lesson navigation"
-            >
-                <a href="day14.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Previous: Day 14</a>
-                <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
-                <span class="cursor-not-allowed rounded bg-gray-100 px-4 py-2 text-gray-400" aria-disabled="true">Next</span>
-            </nav>
+        </details>
+        <nav class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+            aria-label="Responsive lesson navigation">
+            <a href="day14.html" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Previous: Day 14</a>
+            <a href="index.html" class="rounded bg-gray-100 px-4 py-2 text-blue-600 underline">All lessons</a>
+            <span class="cursor-not-allowed rounded bg-gray-100 px-4 py-2 text-gray-400"
+                aria-disabled="true">Next</span>
+        </nav>
 
     </div>
-    
+
     <script>
         function toggleSection(button) {
             const content = button.nextElementSibling;
             const chevron = button.querySelector('span');
-            
+
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
                 chevron.textContent = '▶';
@@ -118,4 +107,5 @@
         }
     </script>
 </body>
+
 </html>
